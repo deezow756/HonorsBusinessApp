@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "qBmtp1r5en9leGbxZh49afwLvGiTULxEVLMRn0lr/2kxT9kYsIUYz/pDYVOLcT9fArLFSziKi1DzzEwLaX8bKA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dorre\\source\\repos\\BusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dorre\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\dorre\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\dorre\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\dorre\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
+    "C:\\Users\\dorre\\.nuget\\packages\\xamarin.forms\\4.7.0.1351\\xamarin.forms.4.7.0.1351.nupkg.sha512"
+  ],
+  "logs": []
+}

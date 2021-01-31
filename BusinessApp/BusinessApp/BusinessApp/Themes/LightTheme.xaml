@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BusinessApp.Themes.LightTheme">
+
+    <Color x:Key="PageBackgroundColor">White</Color>
+    <Color x:Key="NavigationBarColor">WhiteSmoke</Color>
+    <Color x:Key="PrimaryColor">WhiteSmoke</Color>
+    <Color x:Key="SecondaryColor">Black</Color>
+    <Color x:Key="PrimaryTextColor">Black</Color>
+    <Color x:Key="SecondaryTextColor">Black</Color>
+    <Color x:Key="TertiaryTextColor">Black</Color>
+    <Color x:Key="TransparentColor">Transparent</Color>
+    <Color x:Key="ButtonTextColor">Black</Color>
+    <Color x:Key="ButtonBgColor">DodgerBlue</Color>
+    <Color x:Key="BorderColor">Black</Color>
+    <Color x:Key="PlaceHolderColor">Gray</Color>
+
+    <x:String x:Key="CurrentFont"></x:String>
+
+    <FontImageSource x:Key="RadioUncheckedIcon" Glyph="&#xf14a;"  FontFamily="FAR" Size="20" Color="Black"></FontImageSource>
+    <FontImageSource x:Key="RadioCheckedIcon" Glyph="&#xf14a;"  FontFamily="FAS" Size="20" Color="Black"></FontImageSource>
+    <FontImageSource x:Key="BackIcon" Glyph="&#xf060;" FontFamily="FAS" Size="60" Color="Black"></FontImageSource>
+    <FontImageSource x:Key="ToggleOnIcon" Glyph="&#xf205;"  FontFamily="FAS" Size="70" Color="Black"></FontImageSource>
+    <FontImageSource x:Key="ToggleOffIcon" Glyph="&#xf204;"  FontFamily="FAS" Size="70" Color="Black"></FontImageSource>
+
+    <Style x:Key="TitleLabel" TargetType="Label">
+        <Setter Property="TextColor"
+                    Value="{DynamicResource SecondaryTextColor}" />
+        <Setter Property="FontSize"
+                    Value="60" />
+        <Setter Property="FontFamily"
+                    Value="{DynamicResource CurrentFont}"/>
+        <Setter Property="HorizontalTextAlignment"
+                    Value="Center"/>
+    </Style>
+
+    <Style x:Key="LargeLabel" TargetType="Label">
+        <Setter Property="TextColor"
+                    Value="{DynamicResource SecondaryTextColor}" />
+        <Setter Property="FontSize"
+                    Value="40" />
+        <Setter Property="HorizontalTextAlignment"
+                    Value="Center"/>
+        <Setter Property="FontFamily"
+                    Value="{DynamicResource CurrentFont}"/>
+    </Style>
+
+    <Style x:Key="MediumLabel" TargetType="Label">
+        <Setter Property="TextColor"
+                    Value="{DynamicResource PrimaryTextColor}" />
+        <Setter Property="FontSize"
+                    Value="30" />
+        <Setter Property="HorizontalTextAlignment"
+                    Value="Center"/>
+        <Setter Property="FontFamily"
+                    Value="{DynamicResource CurrentFont}"/>
+    </Style>
+
+    <Style x:Key="SmallLabel" TargetType="Label">
+        <Setter Property="TextColor"
+                    Value="{DynamicResource TertiaryTextColor}" />
+        <Setter Property="FontSize"
+                    Value="20" />
+        <Setter Property="HorizontalTextAlignment"
+                    Value="Center"/>
+        <Setter Property="FontFamily"
+                    Value="{DynamicResource CurrentFont}"/>
+    </Style>
+
+    <Style x:Key="HeaderBg" TargetType="Frame">
+        <Setter Property="BackgroundColor"
+                    Value="#2196F3"/>
+        <Setter Property="Padding"
+                    Value="36,48,36,36"/>
+    </Style>
+
+    <Style x:Key="FrameStyle" TargetType="Frame">
+        <Setter Property="BorderColor" 
+                    Value="{DynamicResource PrimaryColor}"/>
+    </Style>
+
+    <Style x:Key="ShowPassStyle" TargetType="Button">
+        <Setter Property="TextColor"
+                    Value="{DynamicResource ButtonTextColor}" />
+        <Setter Property="BackgroundColor"
+                Value="{DynamicResource TransparentColor}" />
+        <Setter Property="FontSize"
+                    Value="20" />
+        <Setter Property="FontFamily"
+                    Value="{DynamicResource CurrentFont}"/>
+    </Style>
+
+    <Style x:Key="ButtonStyle" TargetType="Button">
+        <Setter Property="TextColor"
+                    Value="{DynamicResource ButtonTextColor}" />
+        <Setter Property="BackgroundColor"
+                Value="{DynamicResource TransparentColor}" />
+        <Setter Property="CornerRadius"
+                Value="10" />
+        <Setter Property="BorderWidth"
+                    Value="2"/>
+        <Setter Property="BorderColor"
+                    Value="{DynamicResource PrimaryTextColor}"/>
+        <Setter Property="FontSize"
+                    Value="25" />
+        <Setter Property="FontFamily"
+                    Value="{DynamicResource CurrentFont}"/>
+    </Style>
+
+    <Style x:Key="EntryStyle" TargetType="Entry">
+        <Setter Property="TextColor"
+                    Value="{DynamicResource PrimaryTextColor}"/>
+        <Setter Property="PlaceholderColor"
+                Value="{DynamicResource PlaceHolderColor}"/>        
+        <Setter Property="FontSize"
+                    Value="30" />
+        <Setter Property="FontFamily"
+                    Value="{DynamicResource CurrentFont}"/>
+    </Style>
+
+    <Style x:Key="BorderStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor"
+                    Value="{DynamicResource PageBackgroundColor}"/>
+        <Setter Property="BorderColor"
+                    Value="Gray"/>
+        <Setter Property="CornerRadius"
+                    Value="10"/>
+    </Style>
+
+    <Style x:Key="RadioUnchecked" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource RadioUncheckedIcon}"/>
+    </Style>
+    
+    <Style x:Key="RadioChecked" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource RadioCheckedIcon}"/>
+    </Style>
+
+    <Style x:Key="ToggleOn" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource ToggleOnIcon}"/>
+    </Style>
+
+    <Style x:Key="ToggleOff" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource ToggleOffIcon}"/>
+    </Style>
+</ResourceDictionary>

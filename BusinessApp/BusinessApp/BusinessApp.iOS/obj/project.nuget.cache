@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "UW8e1af86p45ZUbiTsxFVkJlFQQ7r890Qb0txOyCOykNZ9hIvbcKZcdoTAQ1Zw6uEkfvAxUGizCjnyJ0nVv8Iw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dorre\\source\\repos\\BusinessApp\\BusinessApp\\BusinessApp.iOS\\BusinessApp.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dorre\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\dorre\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
+    "C:\\Users\\dorre\\.nuget\\packages\\xamarin.forms\\4.7.0.1351\\xamarin.forms.4.7.0.1351.nupkg.sha512"
+  ],
+  "logs": []
+}
