@@ -36,7 +36,7 @@
                                Style="{DynamicResource LargeLabel}"
                                />
                             <Entry x:Name="txtEmail"
-                           Text="dorrenlsamson"
+                           Text="bobsmith@hotmail.com"
                                Style="{DynamicResource EntryStyle}"
                            />
                         </StackLayout>
@@ -73,7 +73,7 @@
                         Style="{DynamicResource ButtonStyle}"
                         >
                     <VisualStateManager.VisualStateGroups>
-                        <VisualStateGroup x:Name="CommonStates">
+                        <VisualStateGroup>
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
                                     <Setter Property="Scale" Value="1"/>

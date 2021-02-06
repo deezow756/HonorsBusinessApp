@@ -87,15 +87,14 @@ namespace BusinessApp.Views
             FirstLoaderPopup();
             string tempFirstName = txtFirstName.Text;
             string tempSurname = txtSurname.Text;
-            string tempEmail = txtEmail.Text;
+            string tempEmail = txtEmail.Text.ToLower();
 
-            if (!controller.CheckRegistrationDetails(this, tempFirstName, tempSurname, Matched, tempEmail))
+            var result = await controller.CheckRegistrationDetails(tempFirstName, tempSurname, Matched, tempEmail);
+            if (!result)
             {
                 ClosePopup();
                 return;
             }
-
-            tempEmail = tempEmail.ToLower();
 
             string tempPassword = txtPassword.Text;            
 
@@ -106,7 +105,8 @@ namespace BusinessApp.Views
             }
             else
             {
-                if (!controller.Register(this, tempFirstName, tempSurname, tempEmail, tempPassword))
+                result = await controller.Register(tempFirstName, tempSurname, tempEmail, tempPassword);
+                if (!result)
                 {
                     ClosePopup();
                     return;

@@ -38,20 +38,10 @@ namespace BusinessApp.Droid
 
         private void SetColour()
         {
-            if (ThemeHelper.CurrentTheme == ThemeType.Dark)
-            {
                 if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
                     Control.BackgroundTintList = ColorStateList.ValueOf(Android.Graphics.Color.Gray);
                 else
-                    Control.Background.SetColorFilter(Android.Graphics.Color.White, PorterDuff.Mode.SrcAtop);
-            }
-            else
-            {
-                if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
-                    Control.BackgroundTintList = ColorStateList.ValueOf(Android.Graphics.Color.Gray);
-                else
-                    Control.Background.SetColorFilter(Android.Graphics.Color.Black, PorterDuff.Mode.SrcAtop);
-            }
+                    Control.Background.SetColorFilter(Android.Graphics.Color.Gray, PorterDuff.Mode.SrcAtop);            
         }
     }
 }

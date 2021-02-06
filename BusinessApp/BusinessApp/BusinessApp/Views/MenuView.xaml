@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             x:Class="BusinessApp.Views.MenuView">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="MainConent" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout x:Name="naviBar" Orientation="Vertical" Grid.Row="0" VerticalOptions="StartAndExpand">
+                    <Frame Style="{DynamicResource HeaderBg}" HeightRequest="80" VerticalOptions="StartAndExpand">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <ImageButton x:Name="btnBack"
+                                         Source="{DynamicResource BackNavIcon}"
+                                         Clicked="btnBack_Clicked"                           
+                                         HorizontalOptions="StartAndExpand"
+                                         BackgroundColor="Transparent"
+                                        >
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="1"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="0.8"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+                            <Label Text="Menu"
+                                   Style="{DynamicResource LargeLabel}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="CenterAndExpand"
+                                   />
+                            <ImageButton x:Name="btnSettings"
+                                         Source="{DynamicResource SettingsIcon}"
+                                         Clicked="btnSettings_Clicked"                             
+                                         HorizontalOptions="EndAndExpand"
+                                         BackgroundColor="Transparent"
+                                        >
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="1"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="0.8"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout x:Name="companyLayout" IsVisible="false" Grid.Row="1" Spacing="10" Padding="20">
+                    <Button x:Name="btnCreateCompanyAccount"
+                            Text="Create Company Account"
+                            Clicked="btnCreateCompanyAccount_Clicked"
+                            Style="{DynamicResource ButtonStyle}"
+                            >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Button>
+                    <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+                        <Picker x:Name="companyPicker" Style="{DynamicResource PickerStyle}" SelectedIndexChanged="companyPicker_SelectedIndexChanged" HorizontalOptions="CenterAndExpand"/>
+                        <ImageButton x:Name="btnProfile"
+                                         Source="{DynamicResource ProfileIcon}"
+                                         Clicked="btnProfile_Clicked"                          
+                                         HorizontalOptions="EndAndExpand"
+                                         BackgroundColor="Transparent"
+                                        >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.8"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </ImageButton>
+                    </StackLayout>
+                    <StackLayout x:Name="menuButtonsLayout" VerticalOptions="FillAndExpand" IsVisible="false">
+                        <Button x:Name="btnOrders"
+                            Text="Orders"
+                            Clicked="btnOrders_Clicked"
+                            Style="{DynamicResource ButtonStyle}"
+                                VerticalOptions="CenterAndExpand"
+                            >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.8"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Button>
+                        <Button x:Name="btnAddOrder"
+                            Text="Add Order"
+                            Clicked="btnAddOrder_Clicked"
+                            Style="{DynamicResource ButtonStyle}"
+                                VerticalOptions="CenterAndExpand"
+                            >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.8"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Button>
+                        <Button x:Name="btnStocks"
+                            Text="Stocks"
+                            Clicked="btnStocks_Clicked"
+                            Style="{DynamicResource ButtonStyle}"
+                                VerticalOptions="CenterAndExpand"
+                            >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.8"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Button>
+                        <Button x:Name="btnManager"
+                            Text="Manager"
+                            Clicked="btnManager_Clicked"
+                            Style="{DynamicResource ButtonStyle}"
+                                VerticalOptions="CenterAndExpand"
+                            >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.8"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Button>
+                        <Button x:Name="btnStatistics"
+                            Text="Statistics"
+                            Clicked="btnStatistics_Clicked"
+                            Style="{DynamicResource ButtonStyle}"
+                                VerticalOptions="CenterAndExpand"
+                            >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.8"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Button>                        
+                    </StackLayout>
+
+                    <Label Text=""
+                           TextColor="Transparent"
+                           BackgroundColor="Transparent"
+                           VerticalOptions="EndAndExpand"
+                           />
+
+                    <StackLayout x:Name="companyNotApprovedLayout" VerticalOptions="CenterAndExpand" IsVisible="false">
+                        <Label Text="Your Request To Join This Company Has Not Yet Been Approved"
+                               Style="{DynamicResource LargeLabel}"
+                               VerticalOptions="CenterAndExpand"
+                               />
+                    </StackLayout>
+                </StackLayout>
+                
+                <StackLayout x:Name="noCompanyLayout" IsVisible="false" Spacing="10" Grid.Row="1" Padding="20">
+                    <StackLayout Orientation="Horizontal">
+                        <Label x:Name="txtNoCompanyConnected"
+                           Text="Not Connected To Any Companies"
+                           Style="{DynamicResource MediumLabel}"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="Center"
+                           />
+                        <ImageButton x:Name="btnProfile1"
+                                         Source="{DynamicResource ProfileIcon}"
+                                         Clicked="btnProfile_Clicked"                          
+                                         HorizontalOptions="EndAndExpand"
+                                         BackgroundColor="Transparent"
+                                        >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.8"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </ImageButton>
+                    </StackLayout>
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <Label Text="Connect With Company ID:"
+                           Style="{DynamicResource MediumLabel}"
+                           />
+                        <Entry x:Name="txtCompanyID"
+                           Placeholder="CompanyID"
+                           Style="{DynamicResource EntryStyle}"
+                           />
+                        <Button x:Name="btnConnect"
+                                Text="Connect"
+                            Style="{DynamicResource ButtonStyle}"
+                                Clicked="btnConnect_Clicked"
+                            >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.8"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Button>
+                    </StackLayout>
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <Label Text="Create Company Account:"
+                           Style="{DynamicResource MediumLabel}"
+                           HorizontalOptions="CenterAndExpand"
+                           />
+                        <Button x:Name="btnCreateCompanyAccount1"
+                            Text="Create"
+                            Style="{DynamicResource ButtonStyle}"
+                                Clicked="btnCreateCompanyAccount_Clicked"
+                            >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.8"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Button>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

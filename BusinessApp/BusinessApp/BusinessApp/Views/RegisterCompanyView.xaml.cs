@@ -33,7 +33,7 @@ namespace BusinessApp.Views
             if (roles.Count > 0)
                 btnFinish.IsEnabled = true;
 
-            txtCompanyId.Text = controller.GenerateCompanyID();
+            txtCompanyId.Text = await controller.GenerateCompanyID();
         }        
 
         private async void btnBack_Clicked(object sender, EventArgs e)
@@ -45,12 +45,23 @@ namespace BusinessApp.Views
         {
             FirstLoaderPopup();
 
-            string temp = txtCompanyName.Text;
+            string companyName = txtCompanyName.Text.Trim();
 
-            if (controller.Register(user, temp, roles))
+            var result = controller.CheckCompanyRegistationDetails(companyName, roles);
+
+            if(!result)
             {
                 ClosePopup();
                 return;
+            }
+
+            result = await controller.Register(user, companyName, txtCompanyId.Text, roles);
+
+            if (!result)
+            {
+                ClosePopup();
+                await DisplayAlert("Success", "Successfully Created Account And Company", "Ok");
+                await Navigation.PopAsync();
             }
             else
             {
@@ -97,6 +108,8 @@ namespace BusinessApp.Views
         private async void ViewCell_Tapped(object sender, EventArgs e)
         {
             var vc = (ViewCell)sender;
+
+            lstRoles.SelectedItem = null;
 
             var result = await DisplayAlert("Warning", "Are You Sure You Want To Delete This Role?", "Yes", "No");
 

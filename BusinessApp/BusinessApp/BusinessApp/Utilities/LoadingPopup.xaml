@@ -5,11 +5,9 @@
     <ContentView.Content>
         <StackLayout>
             <Image x:Name="imageLoading"
-                   Source="LoadingIcon.png"
+                   Source="{DynamicResource LoadingIcon}"                   
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="CenterAndExpand"
-                   HeightRequest="200"
-                   WidthRequest="200"
                    />
         </StackLayout>
     </ContentView.Content>

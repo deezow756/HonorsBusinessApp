@@ -5,7 +5,7 @@
 
     <Color x:Key="PageBackgroundColor">White</Color>
     <Color x:Key="NavigationBarColor">WhiteSmoke</Color>
-    <Color x:Key="PrimaryColor">WhiteSmoke</Color>
+    <Color x:Key="PrimaryColor">Black</Color>
     <Color x:Key="SecondaryColor">Black</Color>
     <Color x:Key="PrimaryTextColor">Black</Color>
     <Color x:Key="SecondaryTextColor">Black</Color>
@@ -18,11 +18,22 @@
 
     <x:String x:Key="CurrentFont"></x:String>
 
-    <FontImageSource x:Key="RadioUncheckedIcon" Glyph="&#xf14a;"  FontFamily="FAR" Size="20" Color="Black"></FontImageSource>
-    <FontImageSource x:Key="RadioCheckedIcon" Glyph="&#xf14a;"  FontFamily="FAS" Size="20" Color="Black"></FontImageSource>
-    <FontImageSource x:Key="BackIcon" Glyph="&#xf060;" FontFamily="FAS" Size="60" Color="Black"></FontImageSource>
-    <FontImageSource x:Key="ToggleOnIcon" Glyph="&#xf205;"  FontFamily="FAS" Size="70" Color="Black"></FontImageSource>
-    <FontImageSource x:Key="ToggleOffIcon" Glyph="&#xf204;"  FontFamily="FAS" Size="70" Color="Black"></FontImageSource>
+    <FontImageSource x:Key="LoadingIcon" Glyph="&#xf110;"  FontFamily="FAS" Size="150" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+
+    <FontImageSource x:Key="RadioUncheckedIcon" Glyph="&#xf0c8;"  FontFamily="FAR" Size="20" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="RadioCheckedIcon" Glyph="&#xf14a;"  FontFamily="FAR" Size="20" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="BackIcon" Glyph="&#xf060;" FontFamily="FAS" Size="60" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="BackNavIcon" Glyph="&#xf060;" FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="SettingsIcon" Glyph="&#xf013;" FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="ProfileIcon" Glyph="&#xf2bd;" FontFamily="FAS" Size="60" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="ToggleOnIcon" Glyph="&#xf205;"  FontFamily="FAS" Size="70" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="ToggleOffIcon" Glyph="&#xf204;"  FontFamily="FAS" Size="70" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="LightThemeOnIcon" Glyph="&#xf185;"  FontFamily="FAS" Size="70" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="LightThemeOffIcon" Glyph="&#xf185;"  FontFamily="FAR" Size="70" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="DarkThemeOnIcon" Glyph="&#xf186;"  FontFamily="FAS" Size="70" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="DarkThemeOffIcon" Glyph="&#xf186;"  FontFamily="FAR" Size="70" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="EditIcon" Glyph="&#xf044;"  FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    
 
     <Style x:Key="TitleLabel" TargetType="Label">
         <Setter Property="TextColor"
@@ -70,9 +81,9 @@
 
     <Style x:Key="HeaderBg" TargetType="Frame">
         <Setter Property="BackgroundColor"
-                    Value="#2196F3"/>
+                    Value="{DynamicResource NavigationBarColor}"/>
         <Setter Property="Padding"
-                    Value="36,48,36,36"/>
+                    Value="20,0,20,0"/>
     </Style>
 
     <Style x:Key="FrameStyle" TargetType="Frame">
@@ -112,7 +123,9 @@
         <Setter Property="TextColor"
                     Value="{DynamicResource PrimaryTextColor}"/>
         <Setter Property="PlaceholderColor"
-                Value="{DynamicResource PlaceHolderColor}"/>        
+                Value="{DynamicResource PlaceHolderColor}"/>
+        <Setter Property="HorizontalTextAlignment"
+                Value="Center"/>
         <Setter Property="FontSize"
                     Value="30" />
         <Setter Property="FontFamily"
@@ -126,6 +139,22 @@
                     Value="Gray"/>
         <Setter Property="CornerRadius"
                     Value="10"/>
+    </Style>
+
+    <Style x:Key="SwitchStyle" TargetType="Switch">
+        <Setter Property="BackgroundColor"
+                Value="{DynamicResource PageBackgroundColor}"/>
+        <Setter Property="OnColor"
+                Value="Lime"/>
+        <Setter Property="ThumbColor"
+                Value="{DynamicResource PrimaryTextColor}"/>
+    </Style>
+
+    <Style x:Key="PickerStyle" TargetType="Picker">
+        <Setter Property="TextColor"
+                Value="{DynamicResource PrimaryTextColor}"/>
+        <Setter Property="FontFamily"
+                Value="{DynamicResource CurrentFont}"/>
     </Style>
 
     <Style x:Key="RadioUnchecked" TargetType="ImageButton">
@@ -154,5 +183,40 @@
                 Value="Transparent"/>
         <Setter Property="Source"
                 Value="{DynamicResource ToggleOffIcon}"/>
+    </Style>
+
+    <Style x:Key="LightThemeOn" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource LightThemeOnIcon}"/>
+    </Style>
+
+    <Style x:Key="LightThemeOff" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource LightThemeOffIcon}"/>
+    </Style>
+
+    <Style x:Key="DarkThemeOn" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource DarkThemeOnIcon}"/>
+    </Style>
+
+    <Style x:Key="DarkThemeOff" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource DarkThemeOffIcon}"/>
+    </Style>
+
+    <Style x:Key="EditImage" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource EditIcon}"/>
     </Style>
 </ResourceDictionary>

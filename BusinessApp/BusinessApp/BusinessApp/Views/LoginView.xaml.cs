@@ -38,23 +38,33 @@ namespace BusinessApp.Views
             Navigation.PushAsync(new RegisterUserView());
         }
 
-        private void btnSignIn_Clicked(object sender, EventArgs e)
+        private async void btnSignIn_Clicked(object sender, EventArgs e)
         {
             LoadingPopup();
 
             string tempEmail = txtEmail.Text;          
-            string tempPassword = txtPassword.Text;    
-            
-            if(!controller.CheckLoginValues(this, tempEmail, tempPassword))
+            string tempPassword = txtPassword.Text;
+
+            var result = controller.CheckLoginValues(tempEmail, tempPassword);
+
+
+            if (!result)
             {
                 ClosePopup();
                 return;
             }
 
-            if(!controller.Login(this, tempEmail, tempPassword))
+            result = await controller.LoginAsync(tempEmail, tempPassword);
+
+            if (!result)
             {
                 ClosePopup();
                 return;
+            }
+            else
+            {
+                txtEmail.Text = "";
+                txtPassword.Text = "";
             }
         }
 

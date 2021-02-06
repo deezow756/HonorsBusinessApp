@@ -4,5 +4,6 @@
     <SelectedDevice>phone_m-dpi_5_4in_q_10_0_-_api_29_1</SelectedDevice>
     <DefaultDevice>phone_m-dpi_5_4in_q_10_0_-_api_29_1</DefaultDevice>
     <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
+    <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
   </PropertyGroup>
 </Project>

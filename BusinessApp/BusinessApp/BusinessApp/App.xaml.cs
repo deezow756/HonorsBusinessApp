@@ -10,6 +10,8 @@ using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
 using BusinessApp.Themes;
 using BusinessApp.Utilities;
+using BusinessApp.Models;
+using BusinessApp.Resources.Fonts;
 
 namespace BusinessApp
 {
@@ -18,9 +20,17 @@ namespace BusinessApp
         public App()
         {
             Device.SetFlags(new string[] { "AppTheme_Experimental" });
-            DependencyService.Register<IUpdateRenderers>();
             InitializeComponent();
-            ThemeHelper.ChangeTheme();
+            Settings settings = FileManager.LoadSettings();
+            if (settings.AutoTheme)
+            {
+                ThemeHelper.ChangeTheme();
+            }
+            else
+            {
+                ThemeHelper.ChangeTheme(settings.Theme);
+            }
+            FontHelper.ChangeFont(settings.Font);
             MainPage = new NavigationPage(new LoginView());            
         }
         protected override void OnStart()

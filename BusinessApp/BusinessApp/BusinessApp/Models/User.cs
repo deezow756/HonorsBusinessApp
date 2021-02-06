@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Firebase.Database;
 
 namespace BusinessApp.Models
 {
@@ -10,24 +11,24 @@ namespace BusinessApp.Models
         public string Password { get; set; }
         public string FirstName { get; set; }
         public string Surname { get; set; }
-        public List<string> CompanyIDs { get; set; }
-        public int Access { get; set; }
-        public bool Accepted { get; set; }
-        public Role CurrentRole { get; set; }
+        public List<CompanyID> CompanyIDs { get; set; }     
+        
         public DateTime AccountCreated { get; set; }
+        
+        public string Name
+        {
+            get { return FirstName + " " + Surname; }
+        }
 
-
+        public User() { }
         public User(string firstName, string surname, string email, string password)
         {
             FirstName = firstName;
             Surname = surname;
             Email = email;
             Password = password;
-            CurrentRole = null;
-            Access = 0;
-            CompanyIDs = new List<string>();
-            AccountCreated = DateTime.Now;
-            Accepted = false;            
+            CompanyIDs = new List<CompanyID>();
+            AccountCreated = DateTime.Now;         
         }
     }
 }
