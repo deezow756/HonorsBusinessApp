@@ -83,7 +83,7 @@ namespace BusinessApp.Controllers
 
             if (company != null)
             {
-                user.CompanyIDs.Add(new CompanyID() { Approved = false, CompanyNumber = company.CompanyNumber, EmployeeNumber = RandomGenerator.GenerateNumber(6) });
+                user.CompanyIDs.Add(new CompanyID() { Approved = false, CompanyNumber = company.CompanyNumber, Access = 0, CurrentRole = null, EmployeeNumber = RandomGenerator.GenerateNumber(6) });
                 company.Employees.Add(user);
 
                 await helper.UpdateCompany(company);

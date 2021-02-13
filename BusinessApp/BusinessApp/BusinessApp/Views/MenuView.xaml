@@ -92,7 +92,7 @@
                         </VisualStateManager.VisualStateGroups>
                     </Button>
                     <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
-                        <Picker x:Name="companyPicker" Style="{DynamicResource PickerStyle}" SelectedIndexChanged="companyPicker_SelectedIndexChanged" HorizontalOptions="CenterAndExpand"/>
+                        <Picker x:Name="companyPicker" Style="{DynamicResource PickerStyle}" SelectedIndexChanged="companyPicker_SelectedIndexChanged" WidthRequest="150" HorizontalOptions="CenterAndExpand"/>
                         <ImageButton x:Name="btnProfile"
                                          Source="{DynamicResource ProfileIcon}"
                                          Clicked="btnProfile_Clicked"                          
@@ -115,7 +115,7 @@
                             </VisualStateManager.VisualStateGroups>
                         </ImageButton>
                     </StackLayout>
-                    <StackLayout x:Name="menuButtonsLayout" VerticalOptions="FillAndExpand" IsVisible="false">
+                    <StackLayout x:Name="menuButtonsLayout" VerticalOptions="StartAndExpand" IsVisible="false">
                         <Button x:Name="btnOrders"
                             Text="Orders"
                             Clicked="btnOrders_Clicked"
@@ -220,19 +220,12 @@
                                     </VisualState>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                        </Button>                        
+                        </Button>
                     </StackLayout>
 
-                    <Label Text=""
-                           TextColor="Transparent"
-                           BackgroundColor="Transparent"
-                           VerticalOptions="EndAndExpand"
-                           />
-
-                    <StackLayout x:Name="companyNotApprovedLayout" VerticalOptions="CenterAndExpand" IsVisible="false">
+                    <StackLayout x:Name="companyNotApprovedLayout" VerticalOptions="StartAndExpand" IsVisible="false">
                         <Label Text="Your Request To Join This Company Has Not Yet Been Approved"
                                Style="{DynamicResource LargeLabel}"
-                               VerticalOptions="CenterAndExpand"
                                />
                     </StackLayout>
                 </StackLayout>

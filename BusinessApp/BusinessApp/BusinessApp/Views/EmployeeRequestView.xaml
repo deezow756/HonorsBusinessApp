@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             x:Class="BusinessApp.Views.EmployeeRequestView">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid x:Name="MainContent" Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackLayout x:Name="naviBar" Orientation="Vertical" Grid.Row="0" VerticalOptions="StartAndExpand">
+                        <Frame Style="{DynamicResource HeaderBg}" HeightRequest="80" VerticalOptions="StartAndExpand">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <ImageButton x:Name="btnBack"
+                                         Source="{DynamicResource BackNavIcon}"
+                                         Clicked="btnBack_Clicked"                        
+                                         HorizontalOptions="StartAndExpand"
+                                         BackgroundColor="Transparent"
+                                        >
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Scale" Value="1"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState x:Name="Pressed">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Scale" Value="0.8"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </ImageButton>
+                                <Label Text="Request"
+                                   Style="{DynamicResource LargeLabel}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="CenterAndExpand"
+                                   />
+                                <ImageButton x:Name="btnSettings"
+                                         HeightRequest="50"
+                                         WidthRequest="50"
+                                         HorizontalOptions="EndAndExpand"
+                                         BackgroundColor="Transparent"
+                                        >
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Scale" Value="1"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState x:Name="Pressed">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Scale" Value="0.8"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </ImageButton>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1" Padding="20">
+                        <StackLayout VerticalOptions="CenterAndExpand">
+                            <Label Text="Name"
+                           Style="{DynamicResource MediumLabel}"
+                           />
+                            <Label x:Name="txtName"
+                           Style="{DynamicResource MediumLabel}"
+                           />
+                        </StackLayout>
+                        <StackLayout VerticalOptions="CenterAndExpand">
+                            <Label Text="Email"
+                           Style="{DynamicResource MediumLabel}"
+                           />
+                            <Label x:Name="txtEmail"
+                           Style="{DynamicResource MediumLabel}"
+                           />
+                        </StackLayout>
+                        <StackLayout VerticalOptions="CenterAndExpand">
+                            <Label Text="Select A Role For The Employee:"
+                           Style="{DynamicResource MediumLabel}"
+                               />
+                            <Picker x:Name="pickerRoles"
+                            SelectedIndexChanged="pickerRoles_SelectedIndexChanged"
+                            Style="{DynamicResource PickerStyle}"
+                                />
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="Manager Access"
+                           Style="{DynamicResource MediumLabel}"
+                           />
+                            <Picker x:Name="pickerManagerAccess" Style="{DynamicResource PickerStyle}" SelectedIndexChanged="pickerManagerAccess_SelectedIndexChanged">
+                                <Picker.Items>
+                                    <x:String>Yes</x:String>
+                                    <x:String>No</x:String>
+                                </Picker.Items>
+                                <Picker.SelectedIndex>
+                                    -1
+                                </Picker.SelectedIndex>
+                            </Picker>
+                        </StackLayout>
+                        <StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal">
+                            <ImageButton x:Name="btnAccept"
+                                         Source="{DynamicResource TickIcon}"
+                                         BackgroundColor="Transparent"
+                                         Clicked="btnAccept_Clicked"
+                                         HorizontalOptions="CenterAndExpand"
+                                >
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="1"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="0.8"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+                            <ImageButton x:Name="btnReject"
+                                         Source="{DynamicResource CrossIcon}"
+                                         BackgroundColor="Transparent"
+                                         Clicked="btnReject_Clicked"
+                                         HorizontalOptions="CenterAndExpand"
+                                >
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="1"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="0.8"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

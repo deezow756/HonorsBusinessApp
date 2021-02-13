@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using BusinessApp.Themes;
 using Foundation;
 using UIKit;
+using Xamarin.Forms;
 
 namespace BusinessApp.iOS
 {
@@ -23,9 +24,20 @@ namespace BusinessApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            MessagingCenter.Subscribe<object, ThemeType>(App.Current, "ChangeTheme", async (sender, arg) =>
+            {
+                SetAppTheme(arg);
+            });
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+        }
+
+        void SetAppTheme(ThemeType mode)
+        {
+            Window.OverrideUserInterfaceStyle = mode == ThemeType.Dark
+                ? UIUserInterfaceStyle.Dark
+                : UIUserInterfaceStyle.Light;
         }
     }
 }

@@ -18,6 +18,7 @@ namespace BusinessApp.Views
         private bool setup = false;
         private User user;
         private MenuController controller;
+        private Company curCompany;
 
         public MenuView(User user)
         {
@@ -67,7 +68,18 @@ namespace BusinessApp.Views
 
             await controller.MenuSetup(companyPicker, user.CompanyIDs);
 
-            companyPicker.SelectedIndex = 0;
+            if (curCompany != null)
+            {
+                for (int i = 0; i < companyPicker.Items.Count; i++)
+                {
+                    if (companyPicker.Items[i] == curCompany.Name)
+                    {
+                        companyPicker.SelectedIndex = i;
+                        break;
+                    }
+                }
+            }
+            else { companyPicker.SelectedIndex = 0; }
         }
 
         private void NoCompanySetup()
@@ -105,11 +117,17 @@ namespace BusinessApp.Views
                 menuButtonsLayout.IsVisible = false;
                 companyNotApprovedLayout.IsVisible = true;
             }
+
+            curCompany = controller.GetCurrentCompany(user, picker.Items[picker.SelectedIndex]);
         }
 
         private async void btnConnect_Clicked(object sender, EventArgs e)
         {
             var result = await controller.ConnectWithCompany(user, txtCompanyID.Text.Trim());
+            if(result)
+            {
+                Refresh();
+            }
         }
 
         private async void btnSettings_Clicked(object sender, EventArgs e)
@@ -150,9 +168,9 @@ namespace BusinessApp.Views
 
         }
 
-        private void btnManager_Clicked(object sender, EventArgs e)
+        private async void btnManager_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new ManagerPageView(user, controller.GetCompany(user.CompanyIDs[companyPicker.SelectedIndex], companyPicker.SelectedItem.ToString())));
         }
 
         private void btnStatistics_Clicked(object sender, EventArgs e)

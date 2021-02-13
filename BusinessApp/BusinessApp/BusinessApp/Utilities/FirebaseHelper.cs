@@ -150,14 +150,38 @@ namespace BusinessApp.Utilities
 
         public async Task DeleteCompany(string companyId)
         {
-            var toDeletePerson = (await firebase
+            var toDeleteCompany = (await firebase
               .Child("Companies")
               .OnceAsync<Company>()).Where(a => a.Object.CompanyNumber == companyId).FirstOrDefault();
-            await firebase.Child("Companies").Child(toDeletePerson.Key).DeleteAsync();
+            await firebase.Child("Companies").Child(toDeleteCompany.Key).DeleteAsync();
         }
 
         #endregion
 
+        #region ManagerLogsEdit
 
+        public async Task<List<ManagerLog>> GetAllManagerLogs(string companyNumber)
+        {
+            return (await firebase
+              .Child(companyNumber)
+              .Child("ManagerLogs")
+              .OnceAsync<ManagerLog>()).Select(item => new ManagerLog
+              {
+                  Name = item.Object.Name,
+                  Email = item.Object.Email,
+                  Date = item.Object.Date,
+                  Message = item.Object.Message
+              }).ToList();
+        }
+
+        public async Task AddNewManagerLog(string companyNumber, ManagerLog log)
+        {
+            await firebase
+              .Child(companyNumber)
+              .Child("ManagerLogs")
+              .PostAsync(log);
+        }
+
+        #endregion
     }
 }

@@ -8,6 +8,8 @@ using Android.Widget;
 using Android.OS;
 using Android.Content.Res;
 using BusinessApp.Themes;
+using Xamarin.Forms;
+using Android.Support.V7.App;
 
 namespace BusinessApp.Droid
 {
@@ -24,6 +26,11 @@ namespace BusinessApp.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
+
+            MessagingCenter.Subscribe<object, ThemeType>(App.Current, "ChangeTheme", async (sender, arg) =>
+            {
+                SetAppTheme(arg);
+            });
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
@@ -37,5 +44,16 @@ namespace BusinessApp.Droid
             base.OnConfigurationChanged(newConfig);
             ThemeHelper.ChangeTheme();
         }
+
+        void SetAppTheme(ThemeType arg)
+        {
+            if (arg == ThemeType.Dark)
+                Delegate.SetLocalNightMode(AppCompatDelegate.ModeNightYes);
+            else
+                Delegate.SetLocalNightMode(AppCompatDelegate.ModeNightNo);
+        }
+
+        
+
     }
 }

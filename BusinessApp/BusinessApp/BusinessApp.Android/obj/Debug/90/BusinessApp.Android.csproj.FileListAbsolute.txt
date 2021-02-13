@@ -524,16 +524,17 @@ C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debu
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\res\mipmap-xxhdpi\launcher_foreground.png
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\res\mipmap-xxxhdpi\icon.png
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\res\mipmap-xxxhdpi\launcher_foreground.png
-C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\res\drawable\loadingicon.png
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\uploadflags.txt
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\resolvedassemblies.hash
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\BusinessApp.Android.dll
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\BusinessApp.Android.pdb
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\BusinessApp.dll
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\BusinessApp.pdb
+C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\Firebase.dll
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\FormsViewGroup.dll
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\FormsViewGroup.pdb
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\Java.Interop.dll
+C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\LiteDB.dll
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\Mono.Android.dll
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\Mono.Android.pdb
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\Mono.Security.dll
@@ -541,6 +542,7 @@ C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debu
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\mscorlib.dll
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\mscorlib.pdb
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\netstandard.dll
+C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\System.ComponentModel.Composition.dll
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\System.ComponentModel.Composition.pdb
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\System.Core.dll
@@ -563,7 +565,9 @@ C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debu
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\System.Numerics.Vectors.dll
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\System.Numerics.Vectors.pdb
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\System.pdb
+C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\System.Reactive.dll
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\System.Runtime.dll
+C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\System.Runtime.InteropServices.WindowsRuntime.dll
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\System.Runtime.Serialization.dll
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\System.Runtime.Serialization.pdb
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\System.ServiceModel.Internals.dll
@@ -964,9 +968,3 @@ C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debu
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
-C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\Firebase.dll
-C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\LiteDB.dll
-C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll
-C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\System.Reactive.dll
-C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\assets\System.Runtime.InteropServices.WindowsRuntime.dll
-C:\GitHub\HonorsBusinessApp\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\90\android\src\crc645edb43ee9b52b179\MyPickerRenderer.java

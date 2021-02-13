@@ -71,7 +71,6 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="MyEntryRenderer.cs" />
-    <Compile Include="MyPickerRenderer.cs" />
     <Compile Include="PageRenderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

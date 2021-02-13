@@ -22,6 +22,8 @@
 
     <FontImageSource x:Key="RadioUncheckedIcon" Glyph="&#xf0c8;"  FontFamily="FAR" Size="20" Color="{DynamicResource PrimaryColor}"></FontImageSource>
     <FontImageSource x:Key="RadioCheckedIcon" Glyph="&#xf14a;"  FontFamily="FAR" Size="20" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="MediumRadioUncheckedIcon" Glyph="&#xf0c8;"  FontFamily="FAR" Size="30" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="MediumRadioCheckedIcon" Glyph="&#xf14a;"  FontFamily="FAR" Size="30" Color="{DynamicResource PrimaryColor}"></FontImageSource>
     <FontImageSource x:Key="BackIcon" Glyph="&#xf060;" FontFamily="FAS" Size="60" Color="{DynamicResource PrimaryColor}"></FontImageSource>
     <FontImageSource x:Key="BackNavIcon" Glyph="&#xf060;" FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
     <FontImageSource x:Key="SettingsIcon" Glyph="&#xf013;" FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
@@ -33,6 +35,14 @@
     <FontImageSource x:Key="DarkThemeOnIcon" Glyph="&#xf186;"  FontFamily="FAS" Size="70" Color="{DynamicResource PrimaryColor}"></FontImageSource>
     <FontImageSource x:Key="DarkThemeOffIcon" Glyph="&#xf186;"  FontFamily="FAR" Size="70" Color="{DynamicResource PrimaryColor}"></FontImageSource>
     <FontImageSource x:Key="EditIcon" Glyph="&#xf044;"  FontFamily="FAS" Size="60" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="LeftArrowIcon" Glyph="&#xf359;"  FontFamily="FAR" Size="30" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="RightArrowIcon" Glyph="&#xf35a;"  FontFamily="FAR" Size="30" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="RefreshIcon" Glyph="&#xf021;"  FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="SearchIcon" Glyph="&#xf002;"  FontFamily="FAS" Size="30" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+
+    <FontImageSource x:Key="TickIcon" Glyph="&#xf00c;"  FontFamily="FAS" Size="70" Color="Green"></FontImageSource>
+    <FontImageSource x:Key="CrossIcon" Glyph="&#xf00d;"  FontFamily="FAS" Size="70" Color="Red"></FontImageSource>
+    <FontImageSource x:Key="SmallCrossIcon" Glyph="&#xf00d;"  FontFamily="FAS" Size="30" Color="{DynamicResource PrimaryTextColor}"></FontImageSource>
 
     <Style x:Key="TitleLabel" TargetType="Label">
         <Setter Property="TextColor"
@@ -72,6 +82,17 @@
                     Value="{DynamicResource PrimaryTextColor}" />
         <Setter Property="FontSize"
                     Value="20" />
+        <Setter Property="HorizontalTextAlignment"
+                    Value="Center"/>
+        <Setter Property="FontFamily"
+                    Value="{DynamicResource CurrentFont}"/>
+    </Style>
+
+    <Style x:Key="ListLabel" TargetType="Label">
+        <Setter Property="TextColor"
+                    Value="{DynamicResource TertiaryTextColor}" />
+        <Setter Property="FontSize"
+                    Value="15" />
         <Setter Property="HorizontalTextAlignment"
                     Value="Center"/>
         <Setter Property="FontFamily"
@@ -167,6 +188,20 @@
                 Value="{DynamicResource RadioCheckedIcon}"/>
     </Style>
 
+    <Style x:Key="MediumRadioUnchecked" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource MediumRadioUncheckedIcon}"/>
+    </Style>
+
+    <Style x:Key="MediumRadioChecked" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource MediumRadioCheckedIcon}"/>
+    </Style>
+
     <Style x:Key="ToggleOn" TargetType="ImageButton">
         <Setter Property="BackgroundColor"
                 Value="Transparent"/>
@@ -214,5 +249,40 @@
                 Value="Transparent"/>
         <Setter Property="Source"
                 Value="{DynamicResource EditIcon}"/>
+    </Style>
+
+    <Style x:Key="LeftArrowImage" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource LeftArrowIcon}"/>
+    </Style>
+
+    <Style x:Key="RightArrowImage" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource RightArrowIcon}"/>
+    </Style>
+
+    <Style x:Key="RefreshImage" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource RefreshIcon}"/>
+    </Style>
+
+    <Style x:Key="SearchImage" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource SearchIcon}"/>
+    </Style>
+
+    <Style x:Key="SmallCrossImage" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource SmallCrossIcon}"/>
     </Style>
 </ResourceDictionary>

@@ -64,6 +64,7 @@ namespace BusinessApp.Themes
                 case ThemeType.Light:
                     Application.Current.Resources = new LightTheme();
                     CurrentTheme = ThemeType.Light;
+                    MessagingCenter.Send<object, ThemeType>(Application.Current, "ChangeTheme", ThemeType.Light);
                     break;
                 case ThemeType.Dark:
                     Application.Current.Resources = new DarkTheme();

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using BusinessApp.Interfaces;
 using BusinessApp.Models;
@@ -34,6 +36,24 @@ namespace BusinessApp.Controllers
             {
                 Dialog.Show("Warning", "Please Enter An Email", "Ok");
                 return false;
+            }
+            else
+            {
+                try
+                {
+                    var mail = new MailAddress(email);
+                    bool isValidEmail = mail.Host.Contains(".");
+                    if (!isValidEmail)
+                    {
+                        Dialog.Show("Warning", "Please Enter A Vaild Email", "Ok");
+                        return false;
+                    }
+                }
+                catch(Exception)
+                {
+                    Dialog.Show("Warning", "Please Enter A Vaild Email", "Ok");
+                    return false;
+                }
             }
 
             FirebaseHelper helper = new FirebaseHelper();

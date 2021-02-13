@@ -28,13 +28,13 @@
                                    Style="{DynamicResource EntryStyle}"
                                    />
                             <Button x:Name="btnGenerate"
-                                    Text="Generate Company Id"
+                                    Text="Generate Company Number"
                                     Clicked="btnGenerate_Clicked"
                                     Style="{DynamicResource ButtonStyle}"
                                     />
                         </StackLayout>
                         <StackLayout VerticalOptions="CenterAndExpand">
-                            <Label Text="Company Id"
+                            <Label Text="Company Number"
                                    Style="{DynamicResource MediumLabel}"
                                    />
                             <Entry x:Name="txtCompanyId"                                   

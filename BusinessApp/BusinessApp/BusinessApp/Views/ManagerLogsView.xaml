@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             x:Class="BusinessApp.Views.ManagerLogsView">
+    <ContentPage.Content>
+        <ScrollView x:Name="Scroll">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid x:Name="MainContent" Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackLayout x:Name="naviBar" Orientation="Vertical" Grid.Row="0" VerticalOptions="StartAndExpand">
+                        <Frame Style="{DynamicResource HeaderBg}" HeightRequest="80" VerticalOptions="StartAndExpand">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <ImageButton x:Name="btnBack"
+                                         Source="{DynamicResource BackNavIcon}"
+                                         Clicked="btnBack_Clicked"                  
+                                         HorizontalOptions="StartAndExpand"
+                                         BackgroundColor="Transparent"
+                                        >
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Scale" Value="1"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState x:Name="Pressed">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Scale" Value="0.8"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </ImageButton>
+                                <Label Text="Logs"
+                                   Style="{DynamicResource LargeLabel}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="CenterAndExpand"
+                                   />
+                                <ImageButton x:Name="btnRefresh"
+                                         Style="{DynamicResource RefreshImage}"
+                                             Clicked="btnRefresh_Clicked"
+                                         HorizontalOptions="EndAndExpand"
+                                         BackgroundColor="Transparent"
+                                        >
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Scale" Value="1"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState x:Name="Pressed">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Scale" Value="0.8"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </ImageButton>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1" Padding="20">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+                            <Entry x:Name="searchEntry"
+                               Placeholder="Search Logs..."
+                               Style="{DynamicResource EntryStyle}"
+                                   TextChanged="searchEntry_TextChanged_1"
+                               HorizontalOptions="FillAndExpand"
+                               />
+                            <ImageButton x:Name="btnClear"
+                                         Style="{DynamicResource SmallCrossImage}"
+                                         Clicked="btnClear_Clicked"        
+                                        >
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="1"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="0.8"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+                            <ImageButton x:Name="btnRadioMonth"
+                                         Style="{DynamicResource RadioChecked}"
+                                         Clicked="btnRadioMonth_Clicked"          
+                                         HorizontalOptions="CenterAndExpand"
+                                        >
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="1"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="0.8"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+                            <Picker x:Name="monthPicker" WidthRequest="100" SelectedIndexChanged="monthPicker_SelectedIndexChanged">
+                                <Picker.Items>
+                                    <x:String>Jan</x:String>
+                                    <x:String>Feb</x:String>
+                                    <x:String>Mar</x:String>
+                                    <x:String>Apr</x:String>
+                                    <x:String>May</x:String>
+                                    <x:String>June</x:String>
+                                    <x:String>July</x:String>
+                                    <x:String>Aug</x:String>
+                                    <x:String>Sep</x:String>
+                                    <x:String>Oct</x:String>
+                                    <x:String>Nov</x:String>
+                                    <x:String>Dec</x:String>
+                                </Picker.Items>
+                                <Picker.SelectedIndex>
+                                    -1
+                                </Picker.SelectedIndex>
+                            </Picker>
+                            <ImageButton x:Name="btnRadioYear"
+                                         Style="{DynamicResource RadioChecked}"
+                                         Clicked="btnRadioYear_Clicked"             
+                                         HorizontalOptions="CenterAndExpand"
+                                        >
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="1"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="0.8"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+                            <Picker x:Name="yearPicker" WidthRequest="100" SelectedIndexChanged="yearPicker_SelectedIndexChanged">
+                                <Picker.Items>
+                                    
+                                </Picker.Items>
+                                <Picker.SelectedIndex>
+                                    -1
+                                </Picker.SelectedIndex>
+                            </Picker>                            
+                        </StackLayout>
+                        
+                        <ListView x:Name="lstLogs" VerticalOptions="FillAndExpand" HasUnevenRows="true" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell ClassId="{Binding Email}" Tapped="ViewCell_Tapped">
+                                        <StackLayout>
+                                            <Label Text="{Binding Message}" Style="{DynamicResource ListLabel}" HorizontalOptions="CenterAndExpand"/>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
