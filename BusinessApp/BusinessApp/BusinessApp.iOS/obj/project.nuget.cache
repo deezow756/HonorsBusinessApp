@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "u388apahTuD9+DJlbOqycSvpfTbXfYlYc/D6TGR0GXQs/TwKSd6yGN4t+Ojru0YM4266V6uaThvDSN1xKGJDiQ==",
+  "dgSpecHash": "C0eAeS3ePsGFbfZveeUHenwcSHBB0G3elMXtWect8iPufdepTbSLHBmg+B7SgRaSmCarLQ+Nb1QgzRR1/7mEVA==",
   "success": true,
   "projectFilePath": "C:\\GitHub\\HonorsBusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.iOS\\BusinessApp.iOS.csproj",
   "expectedPackageFiles": [
@@ -13,7 +13,7 @@
     "C:\\Users\\dorre\\.nuget\\packages\\system.reflection.typeextensions\\4.3.0\\system.reflection.typeextensions.4.3.0.nupkg.sha512",
     "C:\\Users\\dorre\\.nuget\\packages\\system.runtime.interopservices.windowsruntime\\4.3.0\\system.runtime.interopservices.windowsruntime.4.3.0.nupkg.sha512",
     "C:\\Users\\dorre\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
-    "C:\\Users\\dorre\\.nuget\\packages\\xamarin.forms\\4.7.0.1351\\xamarin.forms.4.7.0.1351.nupkg.sha512"
+    "C:\\Users\\dorre\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
   ],
   "logs": []
 }

@@ -39,6 +39,10 @@
     <FontImageSource x:Key="RightArrowIcon" Glyph="&#xf35a;"  FontFamily="FAR" Size="30" Color="{DynamicResource PrimaryColor}"></FontImageSource>
     <FontImageSource x:Key="RefreshIcon" Glyph="&#xf021;"  FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
     <FontImageSource x:Key="SearchIcon" Glyph="&#xf002;"  FontFamily="FAS" Size="30" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="PlusIcon" Glyph="&#xf067;"  FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="MinusIcon" Glyph="&#xf068;"  FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="DeleteIcon" Glyph="&#xf2ed;"  FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="LogsIcon" Glyph="&#xf1da;"  FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
 
     <FontImageSource x:Key="TickIcon" Glyph="&#xf00c;"  FontFamily="FAS" Size="70" Color="Green"></FontImageSource>
     <FontImageSource x:Key="CrossIcon" Glyph="&#xf00d;"  FontFamily="FAS" Size="70" Color="Red"></FontImageSource>
@@ -148,6 +152,19 @@
                 Value="Center"/>
         <Setter Property="FontSize"
                     Value="30" />
+        <Setter Property="FontFamily"
+                    Value="{DynamicResource CurrentFont}"/>
+    </Style>
+
+    <Style x:Key="EditorStyle" TargetType="Editor">
+        <Setter Property="TextColor"
+                    Value="{DynamicResource PrimaryTextColor}"/>
+        <Setter Property="PlaceholderColor"
+                Value="{DynamicResource PlaceHolderColor}"/>
+        <Setter Property="FontSize"
+                    Value="30" />
+        <Setter Property="AutoSize"
+                    Value="TextChanges"/>
         <Setter Property="FontFamily"
                     Value="{DynamicResource CurrentFont}"/>
     </Style>
@@ -287,5 +304,33 @@
                 Value="Transparent"/>
         <Setter Property="Source"
                 Value="{DynamicResource SmallCrossIcon}"/>
+    </Style>
+
+    <Style x:Key="PlusImage" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource PlusIcon}"/>
+    </Style>
+
+    <Style x:Key="MinusImage" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource MinusIcon}"/>
+    </Style>
+
+    <Style x:Key="DeleteImage" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource DeleteIcon}"/>
+    </Style>
+    
+    <Style x:Key="logsImage" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource LogsIcon}"/>
     </Style>
 </ResourceDictionary>

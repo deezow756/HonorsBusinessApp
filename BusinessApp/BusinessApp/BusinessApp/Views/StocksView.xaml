@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             x:Class="BusinessApp.Views.StocksView">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="MainContent" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout x:Name="naviBar" Orientation="Vertical" Grid.Row="0" VerticalOptions="StartAndExpand">
+                    <Frame Style="{DynamicResource HeaderBg}" HeightRequest="80" VerticalOptions="StartAndExpand">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                            <ImageButton x:Name="btnBack"
+                                         Source="{DynamicResource BackNavIcon}"
+                                         Clicked="btnBack_Clicked"                   
+                                         HorizontalOptions="StartAndExpand"
+                                         BackgroundColor="Transparent"
+                                        >
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="1"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="0.8"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+                            <Label x:Name="txtTitle"
+                                Text="Stocks"
+                                   Style="{DynamicResource MediumLabel}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="CenterAndExpand"
+                                   />
+                            <ImageButton x:Name="btnRefresh"
+                                         Clicked="btnRefresh_Clicked"
+                                         Style="{DynamicResource RefreshImage}"
+                                         HorizontalOptions="EndAndExpand"
+                                        >
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="1"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="0.8"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" VerticalOptions="CenterAndExpand" Padding="20">
+                    <ListView x:Name="liststock" HorizontalOptions="CenterAndExpand" HasUnevenRows="False" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell ClassId="{Binding StockNumber}" Tapped="ViewCell_Tapped">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Style="{Binding Icon}" IsVisible="{Binding IconVisible}" BackgroundColor="Transparent" HorizontalOptions="StartAndExpand"/>
+                                        <Label Text="{Binding Name}" Style="{DynamicResource SmallLabel}" HorizontalOptions="StartAndExpand"/>
+                                        <Label Text="{Binding QuantityString}" Style="{DynamicResource SmallLabel}" HorizontalOptions="EndAndExpand"/>                                        
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <StackLayout Orientation="Horizontal">
+                        <ImageButton x:Name="btnLog"
+                                Clicked="btnLog_Clicked"
+                                HorizontalOptions="StartAndExpand"
+                                Style="{DynamicResource logsImage}"
+                                >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.8"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </ImageButton>
+                        <ImageButton x:Name="btnAddStock"
+                                Clicked="btnAddStock_Clicked"
+                                Style="{DynamicResource PlusImage}"
+                                HorizontalOptions="CenterAndExpand"
+                                >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.8"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </ImageButton>                        
+                        <ImageButton x:Name="btnDelete"
+                                Clicked="btnDelete_Clicked"
+                                Style="{DynamicResource DeleteImage}"
+                                HorizontalOptions="EndAndExpand"
+                                >
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="0.8"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </ImageButton>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+            <Frame CornerRadius="10" Padding="10" Margin="0" Grid.Row="0" x:Name="arcFrame" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="300" WidthRequest="300" IsVisible="false" BackgroundColor="Transparent" HasShadow="True">
+                <ContentView x:Name="frameArcContentView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></ContentView>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -13,7 +13,7 @@
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.3",
           "Xamarin.Essentials": "1.6.1",
-          "Xamarin.Forms": "4.7.0.1351"
+          "Xamarin.Forms": "5.0.0.2012"
         },
         "runtime": {
           "BusinessApp.dll": {}
@@ -157,19 +157,19 @@
           }
         }
       },
-      "Xamarin.Forms/4.7.0.1351": {
+      "Xamarin.Forms/5.0.0.2012": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.7.0.488"
+            "fileVersion": "5.0.0.671"
           },
           "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.7.0.488"
+            "fileVersion": "5.0.0.671"
           },
           "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "4.7.0.488"
+            "fileVersion": "5.0.0.671"
           }
         }
       }
@@ -300,12 +300,12 @@
       "path": "xamarin.essentials/1.6.1",
       "hashPath": "xamarin.essentials.1.6.1.nupkg.sha512"
     },
-    "Xamarin.Forms/4.7.0.1351": {
+    "Xamarin.Forms/5.0.0.2012": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-JdhRaNGFZIkbKC1t/fdI0+iJKO0bZx603hWEu15N3ffUkkRji3EQzMvyv6MZggW6cDR88gIsk0NRkLlLF3wMFg==",
-      "path": "xamarin.forms/4.7.0.1351",
-      "hashPath": "xamarin.forms.4.7.0.1351.nupkg.sha512"
+      "sha512": "sha512-Rqc6xvWR/sf+Db5+qRCFmuYTWVp04QWRfwPto2/JHbShSy4Ed53Q2jpoFzsoloXkJA6saD236PlaWAhT6vI4gw==",
+      "path": "xamarin.forms/5.0.0.2012",
+      "hashPath": "xamarin.forms.5.0.0.2012.nupkg.sha512"
     }
   }
 }

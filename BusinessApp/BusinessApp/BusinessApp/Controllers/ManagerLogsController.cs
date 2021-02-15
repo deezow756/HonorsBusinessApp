@@ -33,9 +33,16 @@ namespace BusinessApp.Controllers
 
         public List<ManagerLog> FilterList(List<ManagerLog> logs, string search)
         {
-            logs.RemoveAll(a => !a.Message.Contains(search));
+            List<ManagerLog> lstLogs = new List<ManagerLog>();
+            for (int i = 0; i < logs.Count; i++)
+            {
+                if (logs[i].Message.ToLower().Contains(search))
+                {
+                    lstLogs.Add(logs[i]);
+                }
+            }
 
-            return logs;
+            return lstLogs;
         }
     }
 }

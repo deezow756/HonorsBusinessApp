@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             x:Class="BusinessApp.Views.AddStockView">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid x:Name="MainContent" Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackLayout x:Name="naviBar" Orientation="Vertical" Grid.Row="0" VerticalOptions="StartAndExpand">
+                        <Frame Style="{DynamicResource HeaderBg}" HeightRequest="80" VerticalOptions="StartAndExpand">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <ImageButton x:Name="btnBack"
+                                         Source="{DynamicResource BackNavIcon}"
+                                         Clicked="btnBack_Clicked"             
+                                         HorizontalOptions="StartAndExpand"
+                                         BackgroundColor="Transparent"
+                                        >
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Scale" Value="1"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState x:Name="Pressed">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Scale" Value="0.8"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </ImageButton>
+                                <Label x:Name="txtTitle"
+                                Text="Stocks"
+                                   Style="{DynamicResource MediumLabel}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="CenterAndExpand"
+                                   />
+                                <ImageButton x:Name="btnRefresh"
+                                         WidthRequest="50"
+                                         HeightRequest="50"
+                                         HorizontalOptions="EndAndExpand"
+                                         BackgroundColor="Transparent"
+                                        >
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Scale" Value="1"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState x:Name="Pressed">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Scale" Value="0.8"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </ImageButton>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1" Spacing="10" Padding="20">
+                        <StackLayout>
+                            <Label Text="Type"
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                            <Picker x:Name="modePicker"
+                                    SelectedIndexChanged="modePicker_SelectedIndexChanged"
+                                    Style="{DynamicResource PickerStyle}"
+                                    VerticalOptions="CenterAndExpand"
+                                    >
+                                <Picker.Items>
+                                    <x:String>Item</x:String>
+                                    <x:String>Category</x:String>
+                                </Picker.Items>
+                                <Picker.SelectedIndex>
+                                    -1
+                                </Picker.SelectedIndex>
+                            </Picker>
+                        </StackLayout>
+                        <StackLayout x:Name="itemLayout" IsVisible="false" VerticalOptions="CenterAndExpand">
+                            <Label Text="Item Name"
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                            <Entry x:Name="itemNameEntry"
+                               Style="{DynamicResource EntryStyle}"
+                               />
+                            <Label Text="Price"
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                            <Entry x:Name="itemPriceEntry"
+                               Style="{DynamicResource EntryStyle}"
+                                   Keyboard="Numeric"
+                               />
+                            <Label Text="Cost"
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                            <Entry x:Name="itemCostEntry"
+                               Style="{DynamicResource EntryStyle}"
+                                   Keyboard="Numeric"
+                               />
+                            <Label Text="Quantity"
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                            <Entry x:Name="itemQuantityEntry"
+                               Style="{DynamicResource EntryStyle}"
+                                   Keyboard="Numeric"
+                               />
+                            <Label Text="Description"
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                            <Editor x:Name="itemDescriptionEntry"
+                               Style="{DynamicResource EditorStyle}"                                   
+                               />
+                        </StackLayout>
+                        <StackLayout x:Name="categoryLayout" IsVisible="false" VerticalOptions="CenterAndExpand">
+                            <Label Text="Category Name"
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                            <Entry x:Name="catNameEntry"
+                               Style="{DynamicResource EntryStyle}"
+                               />
+                        </StackLayout>
+
+                        <Button x:Name="btnSave"
+                                Text="Save"
+                                Clicked="btnSave_Clicked"
+                                Style="{DynamicResource ButtonStyle}"
+                                IsVisible="false"
+                                VerticalOptions="EndAndExpand"
+                                />
+                    </StackLayout>
+                </Grid>
+                <Frame CornerRadius="10" Padding="10" Margin="0" Grid.Row="0" x:Name="arcFrame" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="300" WidthRequest="300" IsVisible="false" BackgroundColor="Transparent" HasShadow="True">
+                    <ContentView x:Name="frameArcContentView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></ContentView>
+                </Frame>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

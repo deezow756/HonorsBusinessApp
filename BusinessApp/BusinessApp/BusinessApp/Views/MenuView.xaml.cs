@@ -163,14 +163,14 @@ namespace BusinessApp.Views
 
         }
 
-        private void btnStocks_Clicked(object sender, EventArgs e)
+        private async void btnStocks_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new StocksView(user, curCompany));
         }
 
         private async void btnManager_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ManagerPageView(user, controller.GetCompany(user.CompanyIDs[companyPicker.SelectedIndex], companyPicker.SelectedItem.ToString())));
+            await Navigation.PushAsync(new ManagerPageView(user, curCompany));
         }
 
         private void btnStatistics_Clicked(object sender, EventArgs e)

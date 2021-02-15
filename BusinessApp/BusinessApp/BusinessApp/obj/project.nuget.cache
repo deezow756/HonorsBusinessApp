@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8Wl5ecXUqSjkbOEbJbJmv0gleQrkxTumgGS4ppTDUg7Vu7kXgbLxF+plRikwr7s3Ai9OCjrcausEE3HYidUDiQ==",
+  "dgSpecHash": "faQ7uQ7Nrjiu2k8+sii/tkPR18hOVyClHsTlajnGQvepmUX4vmei5ZMF6tqeaVJNHRiRZJDrhiFTRYjaak8H6Q==",
   "success": true,
   "projectFilePath": "C:\\GitHub\\HonorsBusinessApp\\BusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.csproj",
   "expectedPackageFiles": [
@@ -21,7 +21,7 @@
     "C:\\Users\\dorre\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\dorre\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\dorre\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
-    "C:\\Users\\dorre\\.nuget\\packages\\xamarin.forms\\4.7.0.1351\\xamarin.forms.4.7.0.1351.nupkg.sha512"
+    "C:\\Users\\dorre\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
   ],
   "logs": []
 }

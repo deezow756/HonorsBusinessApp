@@ -170,7 +170,8 @@ namespace BusinessApp.Utilities
                   Name = item.Object.Name,
                   Email = item.Object.Email,
                   Date = item.Object.Date,
-                  Message = item.Object.Message
+                  Message = item.Object.Message,
+                  LogType = item.Object.LogType
               }).ToList();
         }
 
@@ -179,6 +180,100 @@ namespace BusinessApp.Utilities
             await firebase
               .Child(companyNumber)
               .Child("ManagerLogs")
+              .PostAsync(log);
+        }
+
+        #endregion
+
+        #region StockEdit
+
+        public async Task<List<StockItem>> GetAllStockItems(string companyId)
+        {
+            return (await firebase
+              .Child(companyId)
+              .Child("Stocks")
+              .OnceAsync<StockItem>()).Select(item => new StockItem
+              {
+                  Name = item.Object.Name,
+                  Catergory = item.Object.Catergory,
+                  Quantity = item.Object.Quantity,
+                  Description = item.Object.Description,
+                  Type = item.Object.Type,
+                  Price = item.Object.Price,
+                  Cost = item.Object.Cost,
+                  StockNumber = item.Object.StockNumber,
+                  CompanyNumber = item.Object.CompanyNumber
+              }).ToList();
+        }
+
+        public async Task<StockItem> GetStockItem(string companyId, string stockNumber)
+        {
+            var allStockItems = await GetAllStockItems(companyId);
+            await firebase
+              .Child(companyId)
+              .Child("Stocks")
+              .OnceAsync<StockItem>();
+            return allStockItems.Where(a => a.StockNumber == stockNumber).FirstOrDefault();
+        }
+
+        public async Task AddNewStockItem(StockItem stock)
+        {
+            await firebase
+              .Child(stock.CompanyNumber)
+              .Child("Stocks")
+              .PostAsync(stock);
+        }
+
+        public async Task UpdateStockItem(StockItem newInfo)
+        {
+            var toUpdateStock = (await firebase
+              .Child(newInfo.CompanyNumber)
+              .Child("Stocks")
+              .OnceAsync<StockItem>()).Where(a => a.Object.StockNumber == newInfo.StockNumber).FirstOrDefault();
+
+            await firebase
+              .Child(newInfo.CompanyNumber)
+              .Child("Stocks")
+              .Child(toUpdateStock.Key)
+              .PutAsync(newInfo);
+        }
+
+        public async Task DeleteStockItems(List<StockItem> items)
+        {
+            for (int i = 0; i < items.Count; i++)
+            {
+                var toDeletePerson = (await firebase
+                  .Child(items[0].CompanyNumber)
+                  .Child("Stocks")
+                  .OnceAsync<StockItem>()).Where(a => a.Object.StockNumber == items[i].StockNumber).FirstOrDefault();
+                await firebase.Child(items[i].CompanyNumber).Child("Stocks").Child(toDeletePerson.Key).DeleteAsync();
+            }
+        }
+
+        #endregion
+
+        #region StockLogs
+
+        public async Task<List<StockLog>> GetAllStockLogs(string companyId)
+        {
+            return (await firebase
+              .Child(companyId)
+              .Child("StockLogs")
+              .OnceAsync<StockLog>()).Select(item => new StockLog
+              {
+                  Date = item.Object.Date,
+                  Name = item.Object.Name,
+                  Email = item.Object.Email,
+                  Message = item.Object.Message,
+                  LogType = item.Object.LogType
+              }).ToList();
+        }
+
+        public async Task AddNewStockLog(string companyId, StockLog log)
+        {
+            await firebase
+              .Child(companyId)
+              .Child("StockLogs")
               .PostAsync(log);
         }
 

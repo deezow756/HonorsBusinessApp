@@ -144,7 +144,7 @@ namespace BusinessApp.Views
         {
             searchEntry.Text = "";
             searchString = "";
-            RefreshList();
+            Refresh();
         }
 
         private void btnRadioMonth_Clicked(object sender, EventArgs e)
@@ -157,10 +157,10 @@ namespace BusinessApp.Views
             else
             {
                 filterMonth = true;
-                btnRadioMonth.Style = Application.Current.Resources["MediumRadioChecked"] as Style;
+                btnRadioMonth.Style = Application.Current.Resources["RadioChecked"] as Style;
             }
 
-            RefreshList();
+            Refresh();
         }
 
         private void btnRadioYear_Clicked(object sender, EventArgs e)
@@ -176,7 +176,7 @@ namespace BusinessApp.Views
                 btnRadioYear.Style = Application.Current.Resources["RadioChecked"] as Style;
             }
 
-            RefreshList();
+            Refresh();
         }
 
         private void searchEntry_TextChanged_1(object sender, TextChangedEventArgs e)
@@ -192,7 +192,7 @@ namespace BusinessApp.Views
                 searchString = searchEntry.Text;
             }
 
-            RefreshList();
+            Refresh();
         }
 
         private void monthPicker_SelectedIndexChanged(object sender, EventArgs e)
@@ -201,7 +201,7 @@ namespace BusinessApp.Views
             { return; }
             if(monthPicker.SelectedIndex > -1)
             {
-                RefreshList();
+                Refresh();
             }
         }
 
@@ -211,7 +211,7 @@ namespace BusinessApp.Views
             { return; }
             if (yearPicker.SelectedIndex > -1)
             {
-                RefreshList();
+                Refresh();
             }
         }
 
