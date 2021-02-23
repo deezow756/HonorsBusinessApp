@@ -3689,24 +3689,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dorre\\.nuget\\packages\\": {},
+    "C:\\Users\\Deezow\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitHub\\HonorsBusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.Android\\BusinessApp.Android.csproj",
+      "projectUniqueName": "E:\\BusinessApp\\BusinessApp\\BusinessApp.Android\\BusinessApp.Android.csproj",
       "projectName": "BusinessApp.Android",
-      "projectPath": "C:\\GitHub\\HonorsBusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.Android\\BusinessApp.Android.csproj",
-      "packagesPath": "C:\\Users\\dorre\\.nuget\\packages\\",
-      "outputPath": "C:\\GitHub\\HonorsBusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.Android\\obj\\",
+      "projectPath": "E:\\BusinessApp\\BusinessApp\\BusinessApp.Android\\BusinessApp.Android.csproj",
+      "packagesPath": "C:\\Users\\Deezow\\.nuget\\packages\\",
+      "outputPath": "E:\\BusinessApp\\BusinessApp\\BusinessApp.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\dorre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Deezow\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -3720,8 +3720,8 @@
       "frameworks": {
         "monoandroid10.0": {
           "projectReferences": {
-            "C:\\GitHub\\HonorsBusinessApp\\BusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.csproj": {
-              "projectPath": "C:\\GitHub\\HonorsBusinessApp\\BusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.csproj"
+            "E:\\BusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.csproj": {
+              "projectPath": "E:\\BusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.csproj"
             }
           }
         }

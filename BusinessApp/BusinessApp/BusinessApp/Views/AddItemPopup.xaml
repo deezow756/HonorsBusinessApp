@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BusinessApp.Views.AddItemPopup">
+  <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Horizontal" HeightRequest="80" Grid.Row="0">
+                <ImageButton x:Name="btnLstBack"
+                                 Source="{DynamicResource BackNavIcon}"
+                                 Clicked="btnLstBack_Clicked"
+                                 HorizontalOptions="StartAndExpand"
+                                 BackgroundColor="Transparent"
+                             >
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="1"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="0.8"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </ImageButton>
+                <Label x:Name="txtTitle"
+                           Text="Stock"
+                           Style="{DynamicResource MediumLabel}"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           />
+                <ImageButton x:Name="btnType"
+                             Style="{DynamicResource BasketImage}"
+                             Clicked="btnType_Clicked"
+                             HorizontalOptions="EndAndExpand"
+                            >
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="1"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="0.8"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </ImageButton>
+            </StackLayout>
+            <StackLayout x:Name="basketLayout" IsVisible="false" Grid.Row="1">
+                <StackLayout x:Name="lstBasketLayout" IsVisible="false" VerticalOptions="CenterAndExpand">
+                    <ListView x:Name="liststock" HorizontalOptions="CenterAndExpand" HasUnevenRows="True" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell ClassId="{Binding StockNumber}" Tapped="ViewCell_Tapped">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Name}" Style="{DynamicResource MediumListLabel}" HorizontalOptions="StartAndExpand"/>
+                                        <Label Text="{Binding ItemPriceString}" Style="{DynamicResource MediumListLabel}" HorizontalOptions="EndAndExpand"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                <StackLayout x:Name="infoBasketLayout" IsVisible="true" VerticalOptions="FillAndExpand">
+                    <Label x:Name="txtBasketPrice"
+                           Style="{DynamicResource MediumLabel}"
+                           VerticalOptions="CenterAndExpand"
+                           />
+                    <Label x:Name="txtBasketDescription"
+                           Style="{DynamicResource MediumLabel}"
+                           VerticalOptions="CenterAndExpand"
+                           LineBreakMode="WordWrap"
+                           />
+                    <Label x:Name="txtBasketStock"
+                           Style="{DynamicResource MediumLabel}"
+                           VerticalOptions="CenterAndExpand"
+                           />
+                    <Entry x:Name="quantityBasketEntry"
+                           Placeholder="Enter Quantity.."
+                           Style="{DynamicResource EntryStyle}"
+                               Keyboard="Numeric"
+                           VerticalOptions="CenterAndExpand"
+                           />
+                    <ImageButton x:Name="btnBasketAdd"
+                                 Style="{DynamicResource PlusImage}"
+                                 Clicked="btnBasketAdd_Clicked"
+                                 HorizontalOptions="CenterAndExpand"
+                                 VerticalOptions="EndAndExpand"
+                                 >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout x:Name="labourLayout" IsVisible="false" Grid.Row="1">
+                <StackLayout x:Name="lstLabourLayout" IsVisible="false" VerticalOptions="CenterAndExpand">
+                    <ListView x:Name="listLabour" HorizontalOptions="CenterAndExpand" HasUnevenRows="True" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell ClassId="{Binding ItemNumber}" Tapped="ViewCell_Tapped_1">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Name}" Style="{DynamicResource MediumListLabel}" HorizontalOptions="StartAndExpand"/>
+                                        <Label Text="{Binding AmountString}" Style="{DynamicResource MediumListLabel}" HorizontalOptions="EndAndExpand"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                <StackLayout x:Name="infoLabourLayout" IsVisible="false" VerticalOptions="FillAndExpand">
+                    <Label x:Name="txtLabourPrice"
+                           Style="{DynamicResource MediumLabel}"
+                           VerticalOptions="CenterAndExpand"
+                           />
+                    <Entry x:Name="perHourEntry"
+                           Placeholder="Enter Time.."
+                           Style="{DynamicResource EntryStyle}"
+                           TextChanged="perHourEntry_TextChanged"
+                               Keyboard="Numeric"
+                           VerticalOptions="CenterAndExpand"
+                           />
+                    <Label x:Name="txtLabourTotal"
+                           Style="{DynamicResource MediumLabel}"
+                           VerticalOptions="CenterAndExpand"
+                           />
+                    <ImageButton x:Name="btnLabourAdd"
+                                 Style="{DynamicResource PlusImage}"
+                                 Clicked="btnLabourAdd_Clicked"
+                                 HorizontalOptions="CenterAndExpand"
+                                 VerticalOptions="CenterAndExpand"
+                                 >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

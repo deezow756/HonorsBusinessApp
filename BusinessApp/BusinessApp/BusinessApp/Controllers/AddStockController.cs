@@ -87,7 +87,9 @@ namespace BusinessApp.Controllers
                 Description = description,
                 Catergory = category,
                 CompanyNumber = company.CompanyNumber,
-                Type = StockType.Item
+                Type = StockType.Item,
+                Date = DateTime.Now,
+                Active = false
             };
             stockItem.StockNumber = await GenerateRandomStockNumber(company);
 

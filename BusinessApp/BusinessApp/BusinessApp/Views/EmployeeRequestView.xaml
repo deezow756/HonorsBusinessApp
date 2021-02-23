@@ -90,6 +90,15 @@
                            />
                         </StackLayout>
                         <StackLayout VerticalOptions="CenterAndExpand">
+                            <Label Text="Hourly Rate:"
+                           Style="{DynamicResource MediumLabel}"
+                               />
+                            <Entry x:Name="entryHourlyRate"
+                                   Style="{DynamicResource EntryStyle}"
+                                   Keyboard="Numeric"
+                                   />
+                        </StackLayout>
+                        <StackLayout VerticalOptions="CenterAndExpand">
                             <Label Text="Select A Role For The Employee:"
                            Style="{DynamicResource MediumLabel}"
                                />

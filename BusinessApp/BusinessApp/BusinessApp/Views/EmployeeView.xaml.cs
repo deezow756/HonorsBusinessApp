@@ -49,6 +49,7 @@ namespace BusinessApp.Views
             txtEmail.Text = user.Email;
             txtCompanyId.Text = company.CompanyNumber;
             CompanyID companyID = user.CompanyIDs.Find(a => a.CompanyNumber == company.CompanyNumber);
+            txtHourlyRate.Text = companyID.HourlyRate.ToString();
             txtRole.Text = companyID.CurrentRole.Name;
             if(companyID.Access == 1)
             {
@@ -68,6 +69,8 @@ namespace BusinessApp.Views
             viewLayout.IsVisible = false;
             editLayout.IsVisible = true;
             CompanyID companyID = user.CompanyIDs.Find(a => a.CompanyNumber == company.CompanyNumber);
+
+            entryHourlyRate.Text = companyID.HourlyRate.ToString();
 
             List<string> roles = controller.GetRolesString(company.Roles);
 
@@ -119,6 +122,17 @@ namespace BusinessApp.Views
         private async void btnSave_Clicked(object sender, EventArgs e)
         {
             LoadingPopup();
+
+            string rate = entryHourlyRate.Text;
+            if(string.IsNullOrWhiteSpace(rate))
+            {
+                ClosePopup();
+                Dialog.Show("Warning", "Please Enter A Hourly Rate", "Ok");
+                return;
+            }
+
+            user.CompanyIDs.Find(a => a.CompanyNumber == company.CompanyNumber).HourlyRate = double.Parse(rate, System.Globalization.CultureInfo.InvariantCulture);
+
             user.CompanyIDs.Find(a => a.CompanyNumber == company.CompanyNumber).CurrentRole.Name = pickerRole.SelectedItem.ToString();
             if(pickerManager.SelectedIndex == 0)
             {

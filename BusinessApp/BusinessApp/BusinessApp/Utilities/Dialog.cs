@@ -8,7 +8,7 @@ namespace BusinessApp.Utilities
 {
     public class Dialog
     {
-        async public static void Show(string title, string msg, string btn)
+        async public static Task Show(string title, string msg, string btn)
         {
             await Application.Current.MainPage.DisplayAlert(title, msg, btn);
         }

@@ -31,7 +31,7 @@ namespace BusinessApp.Utilities
                       AccountCreated = item.Object.AccountCreated
                   }).ToList();
             }
-            catch(FirebaseException ex)
+            catch(FirebaseException)
             {
                 return null;
             }
@@ -202,7 +202,9 @@ namespace BusinessApp.Utilities
                   Price = item.Object.Price,
                   Cost = item.Object.Cost,
                   StockNumber = item.Object.StockNumber,
-                  CompanyNumber = item.Object.CompanyNumber
+                  CompanyNumber = item.Object.CompanyNumber,
+                  Date = item.Object.Date,
+                  Active = item.Object.Active
               }).ToList();
         }
 
@@ -274,6 +276,98 @@ namespace BusinessApp.Utilities
             await firebase
               .Child(companyId)
               .Child("StockLogs")
+              .PostAsync(log);
+        }
+
+        #endregion
+
+        #region OrderEdit
+
+        public async Task<List<Order>> GetAllOrders(string companyId)
+        {
+            return (await firebase
+              .Child(companyId)
+              .Child("Orders")
+              .OnceAsync<Order>()).Select(item => new Order
+              {
+                  OrderNumber = item.Object.OrderNumber,
+                  Date = item.Object.Date,
+                  Email = item.Object.Email,
+                  ContactNumber = item.Object.ContactNumber,
+                  Items = item.Object.Items,
+                  TotalPrice = item.Object.TotalPrice,
+                  CompanyNumber = item.Object.CompanyNumber,
+                  Paid = item.Object.Paid
+              }).ToList();
+        }
+
+        public async Task<Order> GetOrder(string companyId, string orderNumber)
+        {
+            var allOrders = await GetAllOrders(companyId);
+            await firebase
+              .Child(companyId)
+              .Child("Orders")
+              .OnceAsync<Order>();
+            return allOrders.Where(a => a.OrderNumber == orderNumber).FirstOrDefault();
+        }
+
+        public async Task AddNewOrder(Order order)
+        {
+            await firebase
+              .Child(order.CompanyNumber)
+              .Child("Orders")
+              .PostAsync(order);
+        }
+
+        public async Task UpdateOrder(Order order)
+        {
+            var toUpdateOrder = (await firebase
+              .Child(order.CompanyNumber)
+              .Child("Orders")
+              .OnceAsync<Order>()).Where(a => a.Object.OrderNumber == order.OrderNumber).FirstOrDefault();
+
+            await firebase
+              .Child(order.CompanyNumber)
+              .Child("Orders")
+              .Child(toUpdateOrder.Key)
+              .PutAsync(order);
+        }
+
+        public async Task DeleteOrder(List<Order> orders)
+        {
+            for (int i = 0; i < orders.Count; i++)
+            {
+                var toDeleteOrder = (await firebase
+                  .Child(orders[0].CompanyNumber)
+                  .Child("Orders")
+                  .OnceAsync<Order>()).Where(a => a.Object.OrderNumber == orders[i].OrderNumber).FirstOrDefault();
+                await firebase.Child("Companies").Child(orders[0].CompanyNumber).Child("Orders").Child(toDeleteOrder.Key).DeleteAsync();
+            }
+        }
+
+        #endregion
+
+        #region OrderLog
+
+        public async Task<List<OrderLog>> GetAllOrderLogs(string companyId)
+        {
+            return (await firebase
+              .Child(companyId)
+              .Child("OrderLogs")
+              .OnceAsync<OrderLog>()).Select(item => new OrderLog
+              {
+                  Date = item.Object.Date,
+                  Name = item.Object.Name,
+                  Email = item.Object.Email,
+                  Message = item.Object.Message
+              }).ToList();
+        }
+
+        public async Task AddNewOrderLog(string companyId, OrderLog log)
+        {
+            await firebase
+              .Child(companyId)
+              .Child("OrderLogs")
               .PostAsync(log);
         }
 

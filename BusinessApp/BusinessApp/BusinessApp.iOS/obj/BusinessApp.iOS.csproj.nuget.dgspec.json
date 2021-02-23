@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GitHub\\HonorsBusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.iOS\\BusinessApp.iOS.csproj": {}
+    "E:\\BusinessApp\\BusinessApp\\BusinessApp.iOS\\BusinessApp.iOS.csproj": {}
   },
   "projects": {
-    "C:\\GitHub\\HonorsBusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.iOS\\BusinessApp.iOS.csproj": {
+    "E:\\BusinessApp\\BusinessApp\\BusinessApp.iOS\\BusinessApp.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitHub\\HonorsBusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.iOS\\BusinessApp.iOS.csproj",
+        "projectUniqueName": "E:\\BusinessApp\\BusinessApp\\BusinessApp.iOS\\BusinessApp.iOS.csproj",
         "projectName": "BusinessApp.iOS",
-        "projectPath": "C:\\GitHub\\HonorsBusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.iOS\\BusinessApp.iOS.csproj",
-        "packagesPath": "C:\\Users\\dorre\\.nuget\\packages\\",
-        "outputPath": "C:\\GitHub\\HonorsBusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.iOS\\obj\\",
+        "projectPath": "E:\\BusinessApp\\BusinessApp\\BusinessApp.iOS\\BusinessApp.iOS.csproj",
+        "packagesPath": "C:\\Users\\Deezow\\.nuget\\packages\\",
+        "outputPath": "E:\\BusinessApp\\BusinessApp\\BusinessApp.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\dorre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Deezow\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\GitHub\\HonorsBusinessApp\\BusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.csproj": {
-                "projectPath": "C:\\GitHub\\HonorsBusinessApp\\BusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.csproj"
+              "E:\\BusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.csproj": {
+                "projectPath": "E:\\BusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.csproj"
               }
             }
           }
@@ -73,20 +73,20 @@
         }
       }
     },
-    "C:\\GitHub\\HonorsBusinessApp\\BusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.csproj": {
+    "E:\\BusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitHub\\HonorsBusinessApp\\BusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.csproj",
+        "projectUniqueName": "E:\\BusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.csproj",
         "projectName": "BusinessApp",
-        "projectPath": "C:\\GitHub\\HonorsBusinessApp\\BusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.csproj",
-        "packagesPath": "C:\\Users\\dorre\\.nuget\\packages\\",
-        "outputPath": "C:\\GitHub\\HonorsBusinessApp\\BusinessApp\\BusinessApp\\BusinessApp\\obj\\",
+        "projectPath": "E:\\BusinessApp\\BusinessApp\\BusinessApp\\BusinessApp.csproj",
+        "packagesPath": "C:\\Users\\Deezow\\.nuget\\packages\\",
+        "outputPath": "E:\\BusinessApp\\BusinessApp\\BusinessApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\dorre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Deezow\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -99,6 +99,7 @@
         },
         "frameworks": {
           "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
             "projectReferences": {}
           }
         },
@@ -110,6 +111,7 @@
       },
       "frameworks": {
         "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
           "dependencies": {
             "FirebaseDatabase.net": {
               "target": "Package",
@@ -144,7 +146,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

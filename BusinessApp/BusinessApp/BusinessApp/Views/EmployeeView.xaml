@@ -90,6 +90,14 @@
                            />
                         </StackLayout>
                         <StackLayout VerticalOptions="CenterAndExpand">
+                            <Label Text="Hourly Rate"
+                           Style="{DynamicResource MediumLabel}"
+                           />
+                            <Label x:Name="txtHourlyRate"
+                           Style="{DynamicResource MediumLabel}"
+                           />
+                        </StackLayout>
+                        <StackLayout VerticalOptions="CenterAndExpand">
                             <Label Text="Company Id"
                            Style="{DynamicResource MediumLabel}"
                            />
@@ -118,6 +126,15 @@
                     </StackLayout>
 
                     <StackLayout x:Name="editLayout" Grid.Row="1" Padding="20" IsVisible="false">
+                        <StackLayout VerticalOptions="CenterAndExpand">
+                            <Label Text="Hourly Rate"
+                           Style="{DynamicResource MediumLabel}"
+                               />
+                            <Entry x:Name="entryHourlyRate"
+                                   Style="{DynamicResource EntryStyle}"
+                                   Keyboard="Numeric"
+                                   />
+                        </StackLayout>
                         <StackLayout VerticalOptions="CenterAndExpand">
                             <Label Text="Role"
                            Style="{DynamicResource MediumLabel}"

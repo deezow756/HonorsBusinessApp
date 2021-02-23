@@ -10,6 +10,7 @@ namespace BusinessApp.Models
         public string EmployeeNumber { get; set; }
         public int Access { get; set; }
         public Role CurrentRole { get; set; }
+        public double HourlyRate { get; set; }
         public bool Approved { get; set; }
     }
 }

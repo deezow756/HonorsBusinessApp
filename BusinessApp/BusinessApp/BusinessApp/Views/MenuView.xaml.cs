@@ -153,14 +153,14 @@ namespace BusinessApp.Views
 
         #region MenuButtons        
 
-        private void btnOrders_Clicked(object sender, EventArgs e)
+        private async void btnOrders_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new OrdersView(user, curCompany));
         }
 
-        private void btnAddOrder_Clicked(object sender, EventArgs e)
+        private async void btnAddOrder_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new AddOrderView(user, curCompany));
         }
 
         private async void btnStocks_Clicked(object sender, EventArgs e)

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using BusinessApp.Utilities;
 
 namespace BusinessApp.Views
 {
@@ -57,7 +58,19 @@ namespace BusinessApp.Views
 
         private async void btnAccept_Clicked(object sender, EventArgs e)
         {
-            var result = controller.CheckCompanyID(user.CompanyIDs.Find(a => a.CompanyNumber == company.CompanyNumber));
+            string rate = entryHourlyRate.Text;
+            if(string.IsNullOrWhiteSpace(rate))
+            {
+                Dialog.Show("Warning", "Please Enter A Hourly Rate", "Ok");
+                return; 
+            }
+            user.CompanyIDs.Find(a => a.CompanyNumber == company.CompanyNumber).HourlyRate = double.Parse(rate, System.Globalization.CultureInfo.InvariantCulture);
+            var result = controller.CheckHourlyRate(rate);
+            if(!result)
+            {
+                return;
+            }
+            result = controller.CheckCompanyID(user.CompanyIDs.Find(a => a.CompanyNumber == company.CompanyNumber));
             if(!result)
             {
                 return;

@@ -43,6 +43,8 @@
     <FontImageSource x:Key="MinusIcon" Glyph="&#xf068;"  FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
     <FontImageSource x:Key="DeleteIcon" Glyph="&#xf2ed;"  FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
     <FontImageSource x:Key="LogsIcon" Glyph="&#xf1da;"  FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="BasketIcon" Glyph="&#xf291;"  FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="LabourIcon" Glyph="&#xf0b1;"  FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
 
     <FontImageSource x:Key="TickIcon" Glyph="&#xf00c;"  FontFamily="FAS" Size="70" Color="Green"></FontImageSource>
     <FontImageSource x:Key="CrossIcon" Glyph="&#xf00d;"  FontFamily="FAS" Size="70" Color="Red"></FontImageSource>
@@ -96,7 +98,18 @@
         <Setter Property="TextColor"
                     Value="{DynamicResource TertiaryTextColor}" />
         <Setter Property="FontSize"
-                    Value="15" />
+                    Value="20" />
+        <Setter Property="HorizontalTextAlignment"
+                    Value="Center"/>
+        <Setter Property="FontFamily"
+                    Value="{DynamicResource CurrentFont}"/>
+    </Style>
+
+    <Style x:Key="MediumListLabel" TargetType="Label">
+        <Setter Property="TextColor"
+                    Value="{DynamicResource TertiaryTextColor}" />
+        <Setter Property="FontSize"
+                    Value="25" />
         <Setter Property="HorizontalTextAlignment"
                     Value="Center"/>
         <Setter Property="FontFamily"
@@ -148,8 +161,21 @@
                     Value="{DynamicResource PrimaryTextColor}"/>
         <Setter Property="PlaceholderColor"
                 Value="{DynamicResource PlaceHolderColor}"/>
+        <Setter Property="HorizontalTextAlignment"
+                Value="Center"/>
         <Setter Property="FontSize"
                     Value="30" />
+        <Setter Property="FontFamily"
+                    Value="{DynamicResource CurrentFont}"/>
+    </Style>
+
+    <Style x:Key="ListEntryStyle" TargetType="Entry">
+        <Setter Property="TextColor"
+                    Value="{DynamicResource PrimaryTextColor}"/>
+        <Setter Property="PlaceholderColor"
+                Value="{DynamicResource PlaceHolderColor}"/>
+        <Setter Property="FontSize"
+                    Value="20" />
         <Setter Property="FontFamily"
                     Value="{DynamicResource CurrentFont}"/>
     </Style>
@@ -329,5 +355,19 @@
                 Value="Transparent"/>
         <Setter Property="Source"
                 Value="{DynamicResource LogsIcon}"/>
+    </Style>
+
+    <Style x:Key="BasketImage" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource BasketIcon}"/>
+    </Style>
+
+    <Style x:Key="LabourImage" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource LabourIcon}"/>
     </Style>
 </ResourceDictionary>

@@ -49,6 +49,20 @@ namespace BusinessApp.Controllers
             await helper.UpdateCompany(company);
         }
 
+        public bool CheckHourlyRate(string val)
+        {
+            try
+            {
+                double temp = double.Parse(val, System.Globalization.CultureInfo.InvariantCulture);
+            }
+            catch(Exception)
+            {
+                Dialog.Show("Wanring", "Please Enter A Valid Hourly Rate\nExample: 7.85", "Ok");
+                return false;
+            }
+            return true;
+        }
+
         public bool CheckCompanyID(CompanyID companyID)
         {
             if(companyID.CurrentRole == null)
