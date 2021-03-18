@@ -94,6 +94,17 @@
                     Value="{DynamicResource CurrentFont}"/>
     </Style>
 
+    <Style x:Key="VerySmallLabel" TargetType="Label">
+        <Setter Property="TextColor"
+                    Value="{DynamicResource TertiaryTextColor}" />
+        <Setter Property="FontSize"
+                    Value="10" />
+        <Setter Property="HorizontalTextAlignment"
+                    Value="Center"/>
+        <Setter Property="FontFamily"
+                    Value="{DynamicResource CurrentFont}"/>
+    </Style>
+
     <Style x:Key="ListLabel" TargetType="Label">
         <Setter Property="TextColor"
                     Value="{DynamicResource TertiaryTextColor}" />

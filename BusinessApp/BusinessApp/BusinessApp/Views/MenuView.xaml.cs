@@ -173,9 +173,9 @@ namespace BusinessApp.Views
             await Navigation.PushAsync(new ManagerPageView(user, curCompany));
         }
 
-        private void btnStatistics_Clicked(object sender, EventArgs e)
+        private async void btnStatistics_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new StatisticsView(user, curCompany));
         }
 
         private async void btnCreateCompanyAccount_Clicked(object sender, EventArgs e)

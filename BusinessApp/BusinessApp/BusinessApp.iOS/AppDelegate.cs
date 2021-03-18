@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using BusinessApp.Themes;
+using BusinessApp.Views;
 using Foundation;
 using UIKit;
 using Xamarin.Forms;
@@ -24,9 +25,21 @@ namespace BusinessApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            OxyPlot.Xamarin.Forms.Platform.iOS.PlotViewRenderer.Init();
             MessagingCenter.Subscribe<object, ThemeType>(App.Current, "ChangeTheme", async (sender, arg) =>
             {
                 SetAppTheme(arg);
+            });
+
+            MessagingCenter.Subscribe<ProfitsView>(this, "allowLandScape", sender =>
+            {
+                UIDevice.CurrentDevice.SetValueForKey(new NSNumber((int)UIInterfaceOrientation.LandscapeLeft), new NSString("orientation"));
+            });
+
+            //during page close setting back to portrait
+            MessagingCenter.Subscribe<ProfitsView>(this, "preventLandScape", sender =>
+            {
+                UIDevice.CurrentDevice.SetValueForKey(new NSNumber((int)UIInterfaceOrientation.Portrait), new NSString("orientation"));
             });
             LoadApplication(new App());
 

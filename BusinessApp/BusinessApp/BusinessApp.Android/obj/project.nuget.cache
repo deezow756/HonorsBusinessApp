@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "I+aibwp0tyH1jkqgh+e4aycxaIAYTeyhD3EpIm9TT61wORgezUKpencTkIpMfOF026OoOaym31R1SDPMGLkxZA==",
+  "dgSpecHash": "1B2kplVKEi6dUt9ikoHJa2XIgXmBnJ//yyzp5sqF6BuKS9M6ov675avfc42U9/Kpe6gL6jiYbXt7oa+du2w9UQ==",
   "success": true,
   "projectFilePath": "E:\\BusinessApp\\BusinessApp\\BusinessApp.Android\\BusinessApp.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Deezow\\.nuget\\packages\\firebasedatabase.net\\4.0.5\\firebasedatabase.net.4.0.5.nupkg.sha512",
     "C:\\Users\\Deezow\\.nuget\\packages\\litedb\\4.1.4\\litedb.4.1.4.nupkg.sha512",
     "C:\\Users\\Deezow\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Deezow\\.nuget\\packages\\oxyplot.core\\1.0.0\\oxyplot.core.1.0.0.nupkg.sha512",
+    "C:\\Users\\Deezow\\.nuget\\packages\\oxyplot.xamarin.android\\1.0.0\\oxyplot.xamarin.android.1.0.0.nupkg.sha512",
+    "C:\\Users\\Deezow\\.nuget\\packages\\oxyplot.xamarin.forms\\1.0.0\\oxyplot.xamarin.forms.1.0.0.nupkg.sha512",
     "C:\\Users\\Deezow\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\Deezow\\.nuget\\packages\\system.reactive\\4.0.0\\system.reactive.4.0.0.nupkg.sha512",
     "C:\\Users\\Deezow\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",

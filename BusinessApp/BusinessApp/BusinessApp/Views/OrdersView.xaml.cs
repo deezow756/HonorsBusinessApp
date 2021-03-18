@@ -73,6 +73,17 @@ namespace BusinessApp.Views
                 yearPicker.SelectedIndex = 0;
             }
 
+            if(user.CompanyIDs.Find(a => a.CompanyNumber == company.CompanyNumber).Access == 1)
+            {
+                btnLog.IsVisible = false;
+                btnDelete.IsVisible = false;
+            }
+            else
+            {
+                btnLog.IsVisible = true;
+                btnDelete.IsVisible = true;
+            }
+
             setup = true;
 
             RefreshList();

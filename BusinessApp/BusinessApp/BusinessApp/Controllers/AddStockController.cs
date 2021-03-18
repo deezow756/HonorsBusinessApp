@@ -82,7 +82,7 @@ namespace BusinessApp.Controllers
             {
                 Name = name,
                 Price = double.Parse(price, System.Globalization.CultureInfo.InvariantCulture),
-                Cost = double.Parse(price, System.Globalization.CultureInfo.InvariantCulture),
+                Cost = double.Parse(cost, System.Globalization.CultureInfo.InvariantCulture),
                 Quantity = int.Parse(quantity),
                 Description = description,
                 Catergory = category,

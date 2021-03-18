@@ -11,7 +11,26 @@ namespace BusinessApp.Themes
     public enum ThemeType {Light, Dark}
     public class ThemeHelper
     {
-        public static ThemeType CurrentTheme;
+        public static EventHandler ThemeChanged;
+        public static void OnThemeChanged(EventArgs e)
+        {
+            EventHandler handler = ThemeChanged;
+            if(handler != null)
+            {
+                handler(null, e);
+            }
+        }
+
+        private static ThemeType currentTheme;
+        public static ThemeType CurrentTheme
+        {
+            get { return currentTheme; }
+            set
+            {
+                currentTheme = value;
+                OnThemeChanged(null);
+            }
+        }
         public static void ChangeTheme()
         {
             var curTheme = AppInfo.RequestedTheme;

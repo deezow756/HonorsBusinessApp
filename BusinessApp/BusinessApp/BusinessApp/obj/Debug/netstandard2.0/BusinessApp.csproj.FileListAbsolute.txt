@@ -65,3 +65,6 @@ E:\BusinessApp\BusinessApp\BusinessApp\obj\Debug\netstandard2.0\Views\AddOrderVi
 E:\BusinessApp\BusinessApp\BusinessApp\obj\Debug\netstandard2.0\Views\OrdersView.xaml.g.cs
 E:\BusinessApp\BusinessApp\BusinessApp\obj\Debug\netstandard2.0\Views\OrderInfoView.xaml.g.cs
 E:\BusinessApp\BusinessApp\BusinessApp\obj\Debug\netstandard2.0\Views\OrderLogsView.xaml.g.cs
+E:\BusinessApp\BusinessApp\BusinessApp\obj\Debug\netstandard2.0\Views\OverallView.xaml.g.cs
+E:\BusinessApp\BusinessApp\BusinessApp\obj\Debug\netstandard2.0\Views\ProfitsView.xaml.g.cs
+E:\BusinessApp\BusinessApp\BusinessApp\obj\Debug\netstandard2.0\Views\StatisticsView.xaml.g.cs

@@ -59,6 +59,8 @@ namespace BusinessApp.Views
 
             lstItems.ItemsSource = null;
             lstItems.ItemsSource = order.Items;
+
+            order.CompanyNumber = company.CompanyNumber;
         }
 
         protected override bool OnBackButtonPressed()

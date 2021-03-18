@@ -84,6 +84,17 @@ namespace BusinessApp.Views
             else
             { liststock.ItemsSource = new List<StockItem>() { new StockItem() { Name = "No Stock", Type = StockType.Category } }; }
 
+            if (user.CompanyIDs.Find(a => a.CompanyNumber == company.CompanyNumber).Access == 1)
+            {
+                btnLog.IsVisible = false;
+                btnDelete.IsVisible = false;
+            }
+            else
+            {
+                btnLog.IsVisible = true;
+                btnDelete.IsVisible = true;
+            }
+
             ClosePopup();
             setup = true;
         }

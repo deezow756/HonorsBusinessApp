@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "FEfPE8vFZgqsC46pibSsUaAN766fJg6YCGVsW+dIx005/tsfyxvSlKvFjg1vn7zYCeBQbkkSiF2aLdiALHTS+Q==",
+  "dgSpecHash": "6ptDIXJCeU8JK6oa9TdqXiSUCcsmUlYKzWm/YuPti2HuZ9D6ThLbR3wT3QnwjCZ06b95LQcM/tR/ChtcMTJijA==",
   "success": true,
   "projectFilePath": "E:\\BusinessApp\\BusinessApp\\BusinessApp.iOS\\BusinessApp.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Deezow\\.nuget\\packages\\firebasedatabase.net\\4.0.5\\firebasedatabase.net.4.0.5.nupkg.sha512",
     "C:\\Users\\Deezow\\.nuget\\packages\\litedb\\4.1.4\\litedb.4.1.4.nupkg.sha512",
     "C:\\Users\\Deezow\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Deezow\\.nuget\\packages\\oxyplot.core\\1.0.0\\oxyplot.core.1.0.0.nupkg.sha512",
+    "C:\\Users\\Deezow\\.nuget\\packages\\oxyplot.xamarin.forms\\1.0.0\\oxyplot.xamarin.forms.1.0.0.nupkg.sha512",
+    "C:\\Users\\Deezow\\.nuget\\packages\\oxyplot.xamarin.ios\\1.0.0\\oxyplot.xamarin.ios.1.0.0.nupkg.sha512",
     "C:\\Users\\Deezow\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\Deezow\\.nuget\\packages\\system.reactive\\4.0.0\\system.reactive.4.0.0.nupkg.sha512",
     "C:\\Users\\Deezow\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",

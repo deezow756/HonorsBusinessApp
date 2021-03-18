@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             x:Class="BusinessApp.Views.OverallView">
+    <ContentPage.Content>
+        <ScrollView x:Name="Scroll">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid x:Name="MainContent" Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackLayout x:Name="naviBar" Orientation="Vertical" Grid.Row="0" VerticalOptions="StartAndExpand">
+                        <Frame Style="{DynamicResource HeaderBg}" HeightRequest="80" VerticalOptions="StartAndExpand">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <ImageButton x:Name="btnBack"
+                                         Source="{DynamicResource BackNavIcon}"
+                                         Clicked="btnBack_Clicked"             
+                                         HorizontalOptions="StartAndExpand"
+                                         BackgroundColor="Transparent"
+                                        >
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Scale" Value="1"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState x:Name="Pressed">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Scale" Value="0.8"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </ImageButton>
+                                <Label x:Name="txtTitle"
+                                Text="Overall"
+                                   Style="{DynamicResource MediumLabel}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="CenterAndExpand"
+                                   />
+                                <ImageButton x:Name="btnRefresh"
+                                         Clicked="btnRefresh_Clicked"
+                                         Style="{DynamicResource RefreshImage}"
+                                         HorizontalOptions="EndAndExpand"
+                                        >
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Scale" Value="1"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState x:Name="Pressed">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Scale" Value="0.8"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </ImageButton>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1" Padding="20,0,20,20">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+                            <ImageButton x:Name="btnLeft"
+                                     Style="{DynamicResource LeftArrowImage}"
+                                     Clicked="btnLeft_Clicked"
+                                     HorizontalOptions="StartAndExpand"
+                                     >
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="1"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="0.8"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+                            <Picker x:Name="monthPicker" WidthRequest="100" SelectedIndexChanged="monthPicker_SelectedIndexChanged" HorizontalOptions="CenterAndExpand">
+                                <Picker.Items>
+                                    <x:String>Jan</x:String>
+                                    <x:String>Feb</x:String>
+                                    <x:String>Mar</x:String>
+                                    <x:String>Apr</x:String>
+                                    <x:String>May</x:String>
+                                    <x:String>June</x:String>
+                                    <x:String>July</x:String>
+                                    <x:String>Aug</x:String>
+                                    <x:String>Sep</x:String>
+                                    <x:String>Oct</x:String>
+                                    <x:String>Nov</x:String>
+                                    <x:String>Dec</x:String>
+                                </Picker.Items>
+                                <Picker.SelectedIndex>
+                                    -1
+                                </Picker.SelectedIndex>
+                            </Picker>
+                            <Picker x:Name="yearPicker" WidthRequest="100" SelectedIndexChanged="yearPicker_SelectedIndexChanged" HorizontalOptions="CenterAndExpand">
+                                <Picker.Items>
+
+                                </Picker.Items>
+                                <Picker.SelectedIndex>
+                                    -1
+                                </Picker.SelectedIndex>
+                            </Picker>
+                            <ImageButton x:Name="btnRight"
+                                     Style="{DynamicResource RightArrowImage}"
+                                     Clicked="btnRight_Clicked"
+                                     HorizontalOptions="EndAndExpand"
+                                     >
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="1"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Property="Scale" Value="0.8"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </ImageButton>
+                        </StackLayout>
+
+                        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                            <Label Text="Month"
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                            <Frame Style="{DynamicResource BorderStyle}">
+                                <StackLayout>                                    
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Cost: "
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                                        <Label x:Name="txtMonthCost"
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Earnings: "
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                                        <Label x:Name="txtMonthEarnings"
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Profit: "
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                                        <Label x:Name="txtMonthProfit"
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
+                            <Label Text="Year"
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                            <Frame Style="{DynamicResource BorderStyle}">
+                                <StackLayout>
+                                    
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Cost: "
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                                        <Label x:Name="txtYearCost"
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Earnings: "
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                                        <Label x:Name="txtYearEarnings"
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Profit: "
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                                        <Label x:Name="txtYearProfit"
+                               Style="{DynamicResource MediumLabel}"
+                               />
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+                <Frame CornerRadius="10" Padding="10" Margin="0" Grid.Row="0" x:Name="arcFrame" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="300" WidthRequest="300" IsVisible="false" BackgroundColor="Transparent" HasShadow="True">
+                    <ContentView x:Name="frameArcContentView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></ContentView>
+                </Frame>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

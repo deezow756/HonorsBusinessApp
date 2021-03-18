@@ -34,7 +34,7 @@
     <FontImageSource x:Key="LightThemeOffIcon" Glyph="&#xf185;"  FontFamily="FAR" Size="70" Color="{DynamicResource PrimaryColor}"></FontImageSource>
     <FontImageSource x:Key="DarkThemeOnIcon" Glyph="&#xf186;"  FontFamily="FAS" Size="70" Color="{DynamicResource PrimaryColor}"></FontImageSource>
     <FontImageSource x:Key="DarkThemeOffIcon" Glyph="&#xf186;"  FontFamily="FAR" Size="70" Color="{DynamicResource PrimaryColor}"></FontImageSource>
-    <FontImageSource x:Key="EditIcon" Glyph="&#xf044;"  FontFamily="FAS" Size="60" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="EditIcon" Glyph="&#xf044;"  FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
     <FontImageSource x:Key="LeftArrowIcon" Glyph="&#xf359;"  FontFamily="FAR" Size="30" Color="{DynamicResource PrimaryColor}"></FontImageSource>
     <FontImageSource x:Key="RightArrowIcon" Glyph="&#xf35a;"  FontFamily="FAR" Size="30" Color="{DynamicResource PrimaryColor}"></FontImageSource>
     <FontImageSource x:Key="RefreshIcon" Glyph="&#xf021;"  FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
@@ -88,6 +88,17 @@
                     Value="{DynamicResource PrimaryTextColor}" />
         <Setter Property="FontSize"
                     Value="20" />
+        <Setter Property="HorizontalTextAlignment"
+                    Value="Center"/>
+        <Setter Property="FontFamily"
+                    Value="{DynamicResource CurrentFont}"/>
+    </Style>
+
+    <Style x:Key="VerySmallLabel" TargetType="Label">
+        <Setter Property="TextColor"
+                    Value="{DynamicResource TertiaryTextColor}" />
+        <Setter Property="FontSize"
+                    Value="10" />
         <Setter Property="HorizontalTextAlignment"
                     Value="Center"/>
         <Setter Property="FontFamily"

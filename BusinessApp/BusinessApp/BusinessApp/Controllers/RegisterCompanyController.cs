@@ -62,8 +62,6 @@ namespace BusinessApp.Controllers
             return randomString;
         }
 
-
-
         public async Task<bool> Register(User user, string companyName, string companyID, List<Role> roles)
         {
             if (user.CompanyIDs != null)
@@ -71,7 +69,7 @@ namespace BusinessApp.Controllers
             else
             { user.CompanyIDs = new List<CompanyID>(); }
             user.CompanyIDs.Add(new CompanyID() { Access = 3, Approved = true, CompanyNumber = companyID, EmployeeNumber = RandomGenerator.GenerateNumber(6) , CurrentRole = new Role() { Name = "Owner"} });
-            Company company = new Company() { Name = companyName, CompanyNumber = companyID, Roles = roles, Employees = new List<User>() { user } };
+            Company company = new Company() { Name = companyName, CompanyNumber = companyID, Roles = roles, AccountCreated = DateTime.Now, Employees = new List<User>() { user } };
 
             FirebaseHelper helper = new FirebaseHelper();
             User temp = await helper.GetUser(user.Email);

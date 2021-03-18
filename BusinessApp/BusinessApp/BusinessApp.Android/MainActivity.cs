@@ -10,6 +10,7 @@ using Android.Content.Res;
 using BusinessApp.Themes;
 using Xamarin.Forms;
 using Android.Support.V7.App;
+using BusinessApp.Views;
 
 namespace BusinessApp.Droid
 {
@@ -25,11 +26,25 @@ namespace BusinessApp.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();
             LoadApplication(new App());
+
+            RequestedOrientation = ScreenOrientation.Portrait;
 
             MessagingCenter.Subscribe<object, ThemeType>(App.Current, "ChangeTheme", async (sender, arg) =>
             {
                 SetAppTheme(arg);
+            });
+
+            MessagingCenter.Subscribe<ProfitsView>(this, "allowLandScape", sender =>
+            {
+
+                RequestedOrientation = ScreenOrientation.Landscape;
+            });
+
+            MessagingCenter.Subscribe<ProfitsView>(this, "preventLandScape", sender =>
+            {
+                RequestedOrientation = ScreenOrientation.Portrait;
             });
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
