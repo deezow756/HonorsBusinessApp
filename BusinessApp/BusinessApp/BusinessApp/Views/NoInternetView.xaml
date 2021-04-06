@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             x:Class="BusinessApp.Views.NoInternetView">
+    <ContentPage.Content>
+        <StackLayout Padding="20,20,20,20">
+            <Frame CornerRadius="10" Padding="10" Margin="0" Grid.Row="0" x:Name="arcFrame" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HeightRequest="300" WidthRequest="300" BackgroundColor="Transparent" HasShadow="True">
+                <ContentView x:Name="frameArcContentView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent"></ContentView>
+            </Frame>
+            <Label Text="Internet Disconnected!"
+                   Style="{DynamicResource LargeLabel}"
+                   VerticalOptions="CenterAndExpand"
+                   />
+            <Label Text="Application Will Continue Once Reconnected"
+                   Style="{DynamicResource MediumLabel}"
+                   VerticalOptions="CenterAndExpand"
+                   />
+            <Button x:Name="btnReturn"
+                    Text="Return To Login"
+                    Style="{DynamicResource ButtonStyle}"
+                    Clicked="btnReturn_Clicked"
+                    VerticalOptions="CenterAndExpand"
+                    />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

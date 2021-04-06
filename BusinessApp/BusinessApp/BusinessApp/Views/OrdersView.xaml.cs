@@ -255,5 +255,10 @@ namespace BusinessApp.Views
                 RefreshList();
             }
         }
+
+        private void btnHelp_Clicked(object sender, EventArgs e)
+        {
+            controller.DisplayHelp();
+        }
     }
 }

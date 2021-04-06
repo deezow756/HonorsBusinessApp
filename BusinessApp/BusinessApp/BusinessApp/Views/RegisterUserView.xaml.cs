@@ -28,8 +28,9 @@ namespace BusinessApp.Views
         private void txtPassword_TextChanged(object sender, TextChangedEventArgs e)
         {
             string password = txtPassword.Text;
-            if (!string.IsNullOrEmpty(password))
+            if (!string.IsNullOrWhiteSpace(password))
             {
+                password = password.Trim();
                 if (password.Length >= 6)
                 {
                     txtPasswordError.TextColor = Color.Green;
@@ -52,11 +53,12 @@ namespace BusinessApp.Views
         private void txtPasswordConfirm_TextChanged(object sender, TextChangedEventArgs e)
         {
             string conPassword = txtPasswordConfirm.Text;
-            if (!string.IsNullOrEmpty(conPassword))
+            if (!string.IsNullOrWhiteSpace(conPassword))
             {
+                conPassword = conPassword.Trim();
                 if (conPassword.Length > 3)
                 {
-                    if (conPassword != txtPassword.Text)
+                    if (conPassword != txtPassword.Text.Trim())
                     {
                         txtConPasswordError.IsVisible = true;
                         Matched = false;
@@ -87,7 +89,38 @@ namespace BusinessApp.Views
             FirstLoaderPopup();
             string tempFirstName = txtFirstName.Text;
             string tempSurname = txtSurname.Text;
-            string tempEmail = txtEmail.Text.ToLower();
+            string tempEmail = txtEmail.Text;
+
+            if (!string.IsNullOrWhiteSpace(tempFirstName))
+            {
+                tempFirstName = tempFirstName.Trim();
+                string temp1 = "";
+                for (int i = 0; i < tempFirstName.Length; i++)
+                {
+                    if (i == 0)
+                        temp1 += tempFirstName[i].ToString().ToUpper();
+                    else
+                        temp1 += tempFirstName[i].ToString();
+                }
+                tempFirstName = temp1;
+            }
+            if (!string.IsNullOrWhiteSpace(tempSurname))
+            {
+                tempSurname = tempSurname.Trim();
+                string temp2 = "";
+                for (int i = 0; i < tempSurname.Length; i++)
+                {
+                    if (i == 0)
+                        temp2 += tempSurname[i].ToString().ToUpper();
+                    else
+                        temp2 += tempSurname[i].ToString();
+                }
+                tempSurname = temp2;
+            }
+            if(!string.IsNullOrWhiteSpace(tempEmail))
+            {
+                tempEmail = tempEmail.Trim().ToLower();
+            }
 
             var result = await controller.CheckRegistrationDetails(tempFirstName, tempSurname, Matched, tempEmail);
             if (!result)
@@ -101,7 +134,7 @@ namespace BusinessApp.Views
             if(companySwitch)
             {
                 ClosePopup();
-                await Navigation.PushAsync(new RegisterCompanyView(new User(tempFirstName, tempSurname, tempEmail, tempPassword)));
+                await Navigation.PushAsync(new RegisterCompanyView(new User(tempFirstName, tempSurname, tempEmail, Security.EncryptPassword(tempPassword))));
             }
             else
             {
@@ -159,6 +192,11 @@ namespace BusinessApp.Views
                 btnRegister.Text = "Next";
                 companySwitch = true;
             }
+        }
+
+        private void btnHelp_Clicked(object sender, EventArgs e)
+        {
+            controller.DisplayHelp();
         }
     }
 }

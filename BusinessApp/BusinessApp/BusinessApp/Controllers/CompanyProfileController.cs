@@ -1,5 +1,6 @@
 ﻿using BusinessApp.Models;
 using BusinessApp.Utilities;
+using BusinessApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -96,6 +97,21 @@ namespace BusinessApp.Controllers
             {
                 FirebaseHelper helper = new FirebaseHelper();
                 await helper.AddNewManagerLog(newCompany.CompanyNumber, log);
+            }
+        }
+
+        public async void DisplayHelp(Mode mode)
+        {
+            if(mode == Mode.View)
+            {
+                await Dialog.Show("Help", "Click the pencil icon to enter edit mode", "Ok");
+            }
+            else
+            {
+                await Dialog.Show("Help", "Click the pencil icon to exit edit mode\n\n" +
+                    "To remove roles from the list simply click on the remove and click ok to remove it\n" +
+                    "To add a new role, enter the name of the role in the text box under the list and click add role\n\n" +
+                    "When finshed click save to save the changes made", "Ok");
             }
         }
     }

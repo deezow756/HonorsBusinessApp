@@ -46,9 +46,9 @@
                                    HorizontalOptions="CenterAndExpand"
                                    VerticalOptions="CenterAndExpand"
                                    />
-                            <ImageButton x:Name="btnSettings"
-                                         HeightRequest="50"
-                                         WidthRequest="50"
+                            <ImageButton x:Name="btnHelp"
+                                         Source="{DynamicResource helpIcon}"
+                                         Clicked="btnHelp_Clicked"
                                          HorizontalOptions="EndAndExpand"
                                          BackgroundColor="Transparent"
                                         >

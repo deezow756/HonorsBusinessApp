@@ -37,7 +37,7 @@
 
 	/* 1: BusinessApp.dll */
 	/* uncompressed_file_size */
-	.long	2002944
+	.long	2063872
 	/* loaded */
 	.byte	0
 	/* data */
@@ -82,7 +82,7 @@
 
 	/* 6: Mono.Android.dll */
 	/* uncompressed_file_size */
-	.long	2000896
+	.long	2010112
 	/* loaded */
 	.byte	0
 	/* data */
@@ -613,7 +613,7 @@
 
 	/* 65: Xamarin.Essentials.dll */
 	/* uncompressed_file_size */
-	.long	26624
+	.long	36864
 	/* loaded */
 	.byte	0
 	/* data */

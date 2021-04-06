@@ -22,6 +22,7 @@ namespace BusinessApp.Views
         List<ItemListEntry> items = new List<ItemListEntry>();
 
         bool active = false;
+        bool addingItem = false;
         public AddOrderView(User user, Company company)
         {
             this.user = user;
@@ -44,6 +45,8 @@ namespace BusinessApp.Views
         private async void Entry_TextChanged(object sender, TextChangedEventArgs e)
         {
             if(active)
+                return;
+            if (addingItem)
                 return;
             Entry entry = (Entry)sender;
             ItemListEntry item = items.Find(a => a.ItemNumber == entry.ClassId);           
@@ -87,9 +90,9 @@ namespace BusinessApp.Views
                     if (item.Type == ItemType.Basket)
                     {
                         int quan = int.Parse(entry.Text);
-                        if (quan < 0)
+                        if (quan <= 0)
                         {
-                            await Dialog.Show("Warning", "Quantity Cannot Be A Minus Number", "Ok");
+                            await Dialog.Show("Warning", "Quantity Must Be Higher Than 0", "Ok");
                             entry.Text = "";
                         }
                         else
@@ -161,6 +164,15 @@ namespace BusinessApp.Views
             string phoneNumber = txtPhoneNumber.Text;
             string email = txtEmail.Text;
 
+            if(!string.IsNullOrWhiteSpace(phoneNumber))
+            {
+                phoneNumber = phoneNumber.Trim();
+            }
+            if (!string.IsNullOrWhiteSpace(email))
+            {
+                email = email.Trim();
+            }
+
             var result = await controller.CheckValues(company, items, phoneNumber, email);
             if(!result)
             {
@@ -185,6 +197,7 @@ namespace BusinessApp.Views
             var result = await popup.GetItem();
             if (result != null)
             {
+                addingItem = true;
                 items.Add(result);
                 listItems.ItemsSource = null;
                 listItems.ItemsSource = items;
@@ -195,6 +208,7 @@ namespace BusinessApp.Views
             MainContent.InputTransparent = false; //make main grid touchable
 
             CalTotal();
+            addingItem = false;
         }
 
         private void FirstLoaderPopup()
@@ -234,6 +248,11 @@ namespace BusinessApp.Views
                 listItems.ItemsSource = items;
 
             CalTotal();
+        }
+
+        private void btnHelp_Clicked(object sender, EventArgs e)
+        {
+            controller.DisplayHelp();
         }
     }
 }

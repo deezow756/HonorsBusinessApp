@@ -36,26 +36,48 @@
                            HorizontalOptions="CenterAndExpand"
                            VerticalOptions="CenterAndExpand"
                            />
-                <ImageButton x:Name="btnType"
+                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Spacing="10">
+                    <ImageButton x:Name="btnHelp"
+                                         Source="{DynamicResource helpIcon}"
+                                         Clicked="btnHelp_Clicked"     
+                                         BackgroundColor="Transparent"
+                                        >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                    <ImageButton x:Name="btnType"
                              Style="{DynamicResource BasketImage}"
                              Clicked="btnType_Clicked"
                              HorizontalOptions="EndAndExpand"
                             >
-                    <VisualStateManager.VisualStateGroups>
-                        <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Normal">
-                                <VisualState.Setters>
-                                    <Setter Property="Scale" Value="1"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="Pressed">
-                                <VisualState.Setters>
-                                    <Setter Property="Scale" Value="0.8"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateManager.VisualStateGroups>
-                </ImageButton>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </ImageButton>
+                </StackLayout>
             </StackLayout>
             <StackLayout x:Name="basketLayout" IsVisible="false" Grid.Row="1">
                 <StackLayout x:Name="lstBasketLayout" IsVisible="false" VerticalOptions="CenterAndExpand">

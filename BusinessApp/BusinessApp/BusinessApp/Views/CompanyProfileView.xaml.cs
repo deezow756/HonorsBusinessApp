@@ -88,14 +88,16 @@ namespace BusinessApp.Views
         {
             LoadingPopup();
             string compName = txtEntryCompanyName.Text;
-            if(string.IsNullOrEmpty(compName))
+            if (string.IsNullOrEmpty(compName))
             {
                 ClosePopup();
                 Dialog.Show("Warning", "Please Enter A Company Name In The Textbox Provided", "Ok");
                 return;
             }
-
-            compName = compName.Trim();
+            else
+            {
+                compName = compName.Trim();
+            }
 
             company.Name = compName;
             await controller.SaveChanges(editor, company);
@@ -172,6 +174,11 @@ namespace BusinessApp.Views
             arcFrame.IsVisible = false; //hide the frame
             MainContent.Opacity = 1; //make back the opacity of main grid
             MainContent.InputTransparent = false; //make main grid touchable
+        }
+
+        private void btnHelp_Clicked(object sender, EventArgs e)
+        {
+            controller.DisplayHelp(mode);
         }
     }
 }

@@ -47,11 +47,11 @@
                                    HorizontalOptions="CenterAndExpand"
                                    VerticalOptions="CenterAndExpand"
                                    />
-                                <ImageButton x:Name="btnRefresh"
-                                         WidthRequest="50"
-                                         HeightRequest="50"
-                                         HorizontalOptions="EndAndExpand"
+                                <ImageButton x:Name="btnHelp"
+                                         Source="{DynamicResource helpIcon}"
+                                         Clicked="btnHelp_Clicked"
                                          BackgroundColor="Transparent"
+                                         HorizontalOptions="EndAndExpand"
                                         >
                                     <VisualStateManager.VisualStateGroups>
                                         <VisualStateGroup x:Name="CommonStates">

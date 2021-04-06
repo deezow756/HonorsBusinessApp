@@ -23,8 +23,6 @@ com.google.android.material.tabs.TabLayout;E:\BusinessApp\BusinessApp\BusinessAp
 com.google.android.material.tabs.TabLayout;E:\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\100\lp\47\jl\res\layout\rootlayout.xml
 com.google.android.material.tabs.TabLayout;E:\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\100\lp\47\jl\res\layout\tabbar.xml
 com.google.android.material.tabs.TabLayout;obj\Debug\100\res\layout\tabbar.xml
-crc643f46942d9dd1fff9.ShellFlyoutLayout;E:\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\100\lp\47\jl\res\layout\flyoutcontent.xml
-crc64720bb2db43a66fe9.FormsViewPager;E:\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\100\lp\47\jl\res\layout\rootlayout.xml
 declare-styleable;E:\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\100\lp\47\jl\res\values\attrs.xml
 external-cache-path;E:\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\100\lp\46\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;E:\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\100\lp\46\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
@@ -44,6 +42,12 @@ set;E:\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\100\lp\47\jl\res\an
 set;E:\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\100\lp\47\jl\res\anim\enterfromright.xml
 set;E:\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\100\lp\47\jl\res\anim\exittoleft.xml
 set;E:\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\100\lp\47\jl\res\anim\exittoright.xml
+shape;obj\Debug\100\res\drawable\dark_cursor.xml
+shape;obj\Debug\100\res\drawable\light_cursor.xml
+size;obj\Debug\100\res\drawable\dark_cursor.xml
+size;obj\Debug\100\res\drawable\light_cursor.xml
+solid;obj\Debug\100\res\drawable\dark_cursor.xml
+solid;obj\Debug\100\res\drawable\light_cursor.xml
 string;E:\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\100\lp\47\jl\res\values\strings.xml
 style;E:\BusinessApp\BusinessApp\BusinessApp.Android\obj\Debug\100\lp\47\jl\res\values\styles.xml
 style;obj\Debug\100\res\values\styles.xml

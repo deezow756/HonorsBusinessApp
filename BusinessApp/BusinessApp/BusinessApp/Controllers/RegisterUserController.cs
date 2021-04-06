@@ -79,11 +79,17 @@ namespace BusinessApp.Controllers
         public async Task<bool> Register(string firstName, string surname, string email, string password)
         {
             FirebaseHelper helper = new FirebaseHelper();
-            User user = new User(firstName, surname, email, password);
+            string hashPass = Security.EncryptPassword(password);
+            User user = new User(firstName, surname, email, hashPass);
             await helper.AddNewUser(user);
             Dialog.Show("Success", "Successfully Created Account", "Ok");
 
             return true;
+        }
+
+        public async void DisplayHelp()
+        {
+            await Dialog.Show("Help", "If create company toggle is on you will be navigated to the add company page otherwise you will simply register yourself", "Ok");
         }
     }
 }

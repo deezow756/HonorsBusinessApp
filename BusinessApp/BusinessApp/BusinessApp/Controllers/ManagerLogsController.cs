@@ -44,5 +44,12 @@ namespace BusinessApp.Controllers
 
             return lstLogs;
         }
+
+        public async void DisplayHelp()
+        {
+            await Dialog.Show("Help", "You can filter manager logs by month, year, and search\n\n" +
+                "Month and Year: clicking the tick box will enable and disable the month or year filter\n\n" +
+                "Search: simply start typing and the manager logs will automatically start being filtered by what you are entering", "Ok");
+        }
     }
 }

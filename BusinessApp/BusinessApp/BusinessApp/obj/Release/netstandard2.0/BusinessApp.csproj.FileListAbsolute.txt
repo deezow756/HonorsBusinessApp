@@ -36,4 +36,5 @@ E:\BusinessApp\BusinessApp\BusinessApp\obj\Release\netstandard2.0\XamlC.stamp
 E:\BusinessApp\BusinessApp\BusinessApp\obj\Release\netstandard2.0\BusinessApp.dll
 E:\BusinessApp\BusinessApp\BusinessApp\obj\Release\netstandard2.0\ref\BusinessApp.dll
 E:\BusinessApp\BusinessApp\BusinessApp\obj\Release\netstandard2.0\BusinessApp.pdb
+E:\BusinessApp\BusinessApp\BusinessApp\obj\Release\netstandard2.0\Views\NoInternetView.xaml.g.cs
 E:\BusinessApp\BusinessApp\BusinessApp\obj\Release\netstandard2.0\BusinessApp.csprojAssemblyReference.cache

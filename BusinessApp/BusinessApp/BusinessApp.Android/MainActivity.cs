@@ -38,7 +38,6 @@ namespace BusinessApp.Droid
 
             MessagingCenter.Subscribe<ProfitsView>(this, "allowLandScape", sender =>
             {
-
                 RequestedOrientation = ScreenOrientation.Landscape;
             });
 

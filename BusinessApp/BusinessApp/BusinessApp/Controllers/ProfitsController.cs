@@ -154,5 +154,10 @@ namespace BusinessApp.Controllers
                 model.PlotAreaBorderColor = OxyColors.Black;
             }
         }
+
+        public async void Displayhelp()
+        {
+            await Dialog.Show("Help", "The profiles chart can by filtered by year by clicking the year in the top right and selecting a year", "Ok");
+        }
     }
 }

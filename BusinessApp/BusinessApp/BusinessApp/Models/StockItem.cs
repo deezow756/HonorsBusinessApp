@@ -21,6 +21,7 @@ namespace BusinessApp.Models
         public DateTime Date { get; set; }
 
         public bool Active { get; set; }
+        public DateTime DateActive { get; set; }
 
         public bool SelectionMode = false;
         public bool Selected = false;

@@ -29,11 +29,14 @@ namespace BusinessApp.Controllers
             List<ItemListEntry> items = new List<ItemListEntry>();            
             for (int i = 0; i < company.Employees.Count; i++)
             {
-                ItemListEntry item = new ItemListEntry();
-                item.Name = company.Employees[i].Name;
-                item.Amount = company.Employees[i].CompanyIDs.Find(a => a.CompanyNumber == company.CompanyNumber).HourlyRate;
-                item.ItemNumber = company.Employees[i].Email;
-                items.Add(item);
+                if (company.Employees[i].CompanyIDs.Find(a => a.CompanyNumber == company.CompanyNumber).Access < 3)
+                {
+                    ItemListEntry item = new ItemListEntry();
+                    item.Name = company.Employees[i].Name;
+                    item.Amount = company.Employees[i].CompanyIDs.Find(a => a.CompanyNumber == company.CompanyNumber).HourlyRate;
+                    item.ItemNumber = company.Employees[i].Email;
+                    items.Add(item);
+                }
             }
             for (int i = 0; i < exclude.Count; i++)
             {
@@ -93,6 +96,11 @@ namespace BusinessApp.Controllers
             try
             {
                 temp1 = int.Parse(val);
+                if(temp1 < 1)
+                {
+                    Dialog.Show("Warning", "Quantity Must Be Higher Than 0", "Ok");
+                    return false; 
+                }
                 return true;
             }
             catch (Exception)
@@ -123,6 +131,12 @@ namespace BusinessApp.Controllers
             double temp2 = double.Parse(val2S, System.Globalization.CultureInfo.InvariantCulture);
 
             return temp1 * temp2;
+        }
+
+        public async void DisplayHelp()
+        {
+            await Dialog.Show("Help", "By clicking the icon in the top right will change between adding a stock item and specific employee labour\n\n" +
+                "Simply select the stock or employee and add either the quantity of the stock or the hours of labour and click add", "Ok");
         }
     }
 }

@@ -45,7 +45,12 @@ namespace BusinessApp.Views
         {
             FirstLoaderPopup();
 
-            string companyName = txtCompanyName.Text.Trim();
+            string companyName = txtCompanyName.Text;
+
+            if(!string.IsNullOrWhiteSpace(companyName))
+            {
+                companyName = companyName.Trim();
+            }
 
             var result = controller.CheckCompanyRegistationDetails(companyName, roles);
 
@@ -90,7 +95,7 @@ namespace BusinessApp.Views
 
         private void btnAddRole_Clicked(object sender, EventArgs e)
         {
-            string temp = txtCompanyId.Text;
+            string temp = txtCompanyId.Text.Trim();
 
             if (!string.IsNullOrEmpty(temp))
             {
@@ -140,6 +145,11 @@ namespace BusinessApp.Views
             {
                 btnAddRole.IsEnabled = true;
             }
+        }
+
+        private void btnHelp_Clicked(object sender, EventArgs e)
+        {
+            controller.DisplayHelp();
         }
     }
 }

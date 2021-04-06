@@ -64,9 +64,7 @@ namespace BusinessApp.Controllers
 
         public async Task<bool> Register(User user, string companyName, string companyID, List<Role> roles)
         {
-            if (user.CompanyIDs != null)
-            { }
-            else
+            if (user.CompanyIDs == null)
             { user.CompanyIDs = new List<CompanyID>(); }
             user.CompanyIDs.Add(new CompanyID() { Access = 3, Approved = true, CompanyNumber = companyID, EmployeeNumber = RandomGenerator.GenerateNumber(6) , CurrentRole = new Role() { Name = "Owner"} });
             Company company = new Company() { Name = companyName, CompanyNumber = companyID, Roles = roles, AccountCreated = DateTime.Now, Employees = new List<User>() { user } };
@@ -85,6 +83,14 @@ namespace BusinessApp.Controllers
                 await helper.AddNewCompany(company);
                 return true;
             }          
+        }
+
+        public async void DisplayHelp()
+        {
+            await Dialog.Show("Help", "Enter the name of your company\n\n" +
+                "Click generate company number to generate a company number for your company, it can be clicked again if you want to change the company number\n\n" +
+                "At least one role must be added for the company and can be done by entering the role name in the textbox under the list and click add role\n" +
+                "You can also remove a role by clicking on the role in the list and click ok to remove it", "Ok");
         }
     }
 }

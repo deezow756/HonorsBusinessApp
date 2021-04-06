@@ -86,5 +86,10 @@ namespace BusinessApp.Controllers
 
             return Math.Round(profits + stockValue, 2);
         }
+
+        public async void DisplayHelp()
+        {
+            await Dialog.Show("Help", "The business value is only a estimated average", "Ok");
+        }
     }
 }

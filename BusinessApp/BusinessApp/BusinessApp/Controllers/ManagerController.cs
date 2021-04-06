@@ -47,5 +47,10 @@ namespace BusinessApp.Controllers
 
             return users;
         }
+        public async void Displayhelp()
+        {
+            await Dialog.Show("Help", "You can refresh the page by clicking the refresh icon in the top right corner\n\n" +
+                "Employee requests will only display if there are requests that have not yet been reviewed", "Ok");
+        }
     }
 }

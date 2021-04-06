@@ -19,7 +19,10 @@ namespace BusinessApp.iOS
     {
         private CALayer _line;
 
-        public MyEntryRenderer() { }
+        public MyEntryRenderer()
+        {
+            //ThemeHelper.ThemeChanged += SetColour;
+        }
 
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
@@ -27,16 +30,17 @@ namespace BusinessApp.iOS
 
             if (Control == null || e.NewElement == null)
                 return;
-            SetColour();
+            SetColour(null, null);
         }
 
-        private void SetColour()
+        private void SetColour(Object sender, EventArgs e)
         {
             _line = null;
             Control.BorderStyle = UITextBorderStyle.None;
 
             if (ThemeHelper.CurrentTheme == ThemeType.Dark)
             {
+                Control.TintColor = UIColor.White;
                 _line = new CALayer
                 {
                     BorderColor = UIColor.FromRGB(255, 255, 255).CGColor,
@@ -46,6 +50,7 @@ namespace BusinessApp.iOS
             }
             else
             {
+                Control.TintColor = UIColor.Black;
                 _line = new CALayer
                 {
                     BorderColor = UIColor.FromRGB(0, 0, 0).CGColor,
@@ -55,6 +60,9 @@ namespace BusinessApp.iOS
             }
 
             Control.Layer.AddSublayer(_line);
+
+
+
         }
     }
 }

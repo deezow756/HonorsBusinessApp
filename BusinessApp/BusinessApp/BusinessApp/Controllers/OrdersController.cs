@@ -75,5 +75,12 @@ namespace BusinessApp.Controllers
 
             return temp;
         }
+
+        public async void DisplayHelp()
+        {
+            await Dialog.Show("Help", "You can either filter by month and year or by word searching\n\n" +
+                "Month and Year: you can change the month and year manually by clicking on them or increment the month by clicking the right arrow and decrement the month by clicking the left arrow\n\n" +
+                "Word Search: select what you would like to search by and then enter what you are wanting to search and then click search, to cancel click the cross", "Ok");
+        }
     }
 }

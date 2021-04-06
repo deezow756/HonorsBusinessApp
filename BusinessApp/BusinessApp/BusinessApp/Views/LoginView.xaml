@@ -14,21 +14,25 @@
         <Grid x:Name="MainContent" Grid.Row="0" >
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="200" />
+                <RowDefinition Height="50" />
                 <RowDefinition />
-                <RowDefinition Height="200" />
             </Grid.RowDefinitions>
 
-            <StackLayout Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" >
+            <StackLayout x:Name="noInternetLayout" Grid.Row="0" Opacity="0">
+                <Button Text="No Internet"
+                        Style="{DynamicResource ButtonStyle}"
+                        BorderColor="red"
+                        FontSize="15"
+                        HorizontalOptions="CenterAndExpand"
+                        />
+            </StackLayout>
 
+            <StackLayout Grid.Row="1" Padding="20,10,20,0" Spacing="20">
                 <Label Text="Business App" 
                            Style="{DynamicResource TitleLabel}"
                            HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="StartAndExpand"
                            />
-
-            </StackLayout>
-
-            <StackLayout Grid.Row="1" Padding="20">
                 <Frame Style="{DynamicResource BorderStyle}">
                     <StackLayout VerticalOptions="CenterAndExpand">
                         <StackLayout VerticalOptions="CenterAndExpand">
@@ -36,7 +40,6 @@
                                Style="{DynamicResource LargeLabel}"
                                />
                             <Entry x:Name="txtEmail"
-                           Text="bobsmith@hotmail.com"
                                Style="{DynamicResource EntryStyle}"
                            />
                         </StackLayout>
@@ -47,7 +50,6 @@
                                />
                             <Entry x:Name="txtPassword"
                            IsPassword="True"
-                           Text="hellothere"
                               Style="{DynamicResource EntryStyle}"
                            />
                             <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
@@ -61,53 +63,73 @@
                                          IsEnabled="True"
                                          Style="{DynamicResource RadioUnchecked}"
                                          />
+                                <ImageButton x:Name="btnHelp"
+                                         Clicked="btnHelp_Clicked"
+                                         Style="{DynamicResource LoginHelpImage}"
+                                             HorizontalOptions="EndAndExpand"
+                                         >
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup>
+                                            <VisualState x:Name="Normal">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Scale" Value="1"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState x:Name="Pressed">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Scale" Value="0.8"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </ImageButton>
                             </StackLayout>
                         </StackLayout>
                     </StackLayout>
                 </Frame>
-            </StackLayout>
-            <StackLayout VerticalOptions="EndAndExpand" Grid.Row="2" Padding="20">
-                <Button x:Name="btnSignIn"
+                <StackLayout Spacing="10" VerticalOptions="CenterAndExpand">
+                    <Button x:Name="btnSignIn"
                         Clicked="btnSignIn_Clicked"
                         Text="Sign In"
                         Style="{DynamicResource ButtonStyle}"
                         >
-                    <VisualStateManager.VisualStateGroups>
-                        <VisualStateGroup>
-                            <VisualState x:Name="Normal">
-                                <VisualState.Setters>
-                                    <Setter Property="Scale" Value="1"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="Pressed">
-                                <VisualState.Setters>
-                                    <Setter Property="Scale" Value="0.8"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateManager.VisualStateGroups>
-                </Button>
-                <Button x:Name="btnRegister"
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup>
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Button>
+                    <Button x:Name="btnRegister"
                         Clicked="btnRegister_Clicked"
                         Text="Register"
                         VerticalOptions="CenterAndExpand"
                         Style="{DynamicResource ButtonStyle}"
                         >
-                    <VisualStateManager.VisualStateGroups>
-                        <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Normal">
-                                <VisualState.Setters>
-                                    <Setter Property="Scale" Value="1"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="Pressed">
-                                <VisualState.Setters>
-                                    <Setter Property="Scale" Value="0.8"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateManager.VisualStateGroups>
-                </Button>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale" Value="0.8"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Button>
+                </StackLayout>
             </StackLayout>
 
         </Grid>

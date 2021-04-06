@@ -34,7 +34,7 @@ namespace BusinessApp.Controllers
                     StockItem stock = stocks.Find(a => a.StockNumber == items[i].ItemNumber);
                     if(items[i].Quantity > stock.Quantity)
                     {
-                        Dialog.Show("Warning", stock.Name + ": Only Has " + stock.Quantity + " Left In Stock, You Have Requested: " + items[i].Quantity + 
+                        await Dialog.Show("Warning", stock.Name + ": Only Has " + stock.Quantity + " Left In Stock, You Have Requested: " + items[i].Quantity + 
                             "\nPlease Change The Amount You Are Wanting To The Same As The Stock Or Less" , "Ok");
                         return false;
                     }
@@ -132,6 +132,11 @@ namespace BusinessApp.Controllers
             try
             {
                 temp1 = int.Parse(val);
+                if (temp1 < 1)
+                {
+                    Dialog.Show("Warning", "Quantity Must Be Higher Than 0", "Ok");
+                    return false;
+                }
                 return true;
             }
             catch (Exception)
@@ -147,6 +152,11 @@ namespace BusinessApp.Controllers
             try
             {
                 temp1 = double.Parse(val, System.Globalization.CultureInfo.InvariantCulture);
+                if (temp1 <= 0)
+                {
+                    Dialog.Show("Warning", "Quantity Must Be Higher Than 0", "Ok");
+                    return false;
+                }
                 return true;
             }
             catch (Exception)
@@ -257,6 +267,12 @@ namespace BusinessApp.Controllers
         public async Task<bool> AreYouSure(string title, string msg, string yes, string no)
         {
             return await Dialog.Show(title, msg, yes, no);
+        }
+
+        public async void DisplayHelp()
+        {
+            await Dialog.Show("Help", "For contact details at least the email and/or phone number needs to be enter to be able to complete the order\n\n" +
+                "You can Change the quantity of an item you have added to the order by tapping the number", "Ok");
         }
     }
 }

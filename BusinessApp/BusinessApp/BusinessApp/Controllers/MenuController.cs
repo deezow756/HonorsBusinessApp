@@ -1,6 +1,7 @@
 ﻿using BusinessApp.Interfaces;
 using BusinessApp.Models;
 using BusinessApp.Utilities;
+using BusinessApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -150,6 +151,24 @@ namespace BusinessApp.Controllers
             }
 
             return null;
+        }
+
+        public async void DisplayHelp(MenuMode mode)
+        {
+            if (mode == MenuMode.Disconnected)
+            {
+                await Dialog.Show("Help", "You can either connect to a company or create your own, to connect to a company simply enter in the company and click the connect button", "Ok");
+            }
+            else
+            {
+                await Dialog.Show("Help", "You can simply select the company in the list that you are connected too to access the company's information, if a message displays instead of menu buttons its okay, your request to connect to the company has not yet been reviewed", "Ok");
+
+            }
+        }
+
+        public async Task<bool> AreYouSure(string title, string msg, string yes, string no)
+        {
+            return await Dialog.Show(title, msg, yes, no);
         }
     }
 }

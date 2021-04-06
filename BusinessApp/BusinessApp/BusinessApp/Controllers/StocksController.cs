@@ -94,5 +94,11 @@ namespace BusinessApp.Controllers
             FirebaseHelper helper = new FirebaseHelper();
             await helper.AddNewStockLog(company.CompanyNumber, log);
         }
+
+        public async void DisplayHelp()
+        {
+            await Dialog.Show("Help", "You can refresh the page by clicking refresh in the top right corner\n\n" +
+                "To delete stock/stocks you can click delete and then select the stocks you want to delete and then click delete again and then ok, to exit delete mode you can click the back button or deselect the stocks and click delete", "Ok");
+        }
     }
 }

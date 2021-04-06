@@ -23,7 +23,11 @@ namespace BusinessApp.Controllers
             {
                 if(temp.Active)
                 {
-                    return false;
+                    double difference = (DateTime.Now - temp.DateActive).TotalMinutes;
+                    if(difference < 5)
+                    {
+                        return false;
+                    }
                 }
             }
             else
@@ -36,6 +40,10 @@ namespace BusinessApp.Controllers
         public async Task SetActive(StockItem item, bool state)
         {
             item.Active = state;
+            if(state)
+            {
+                item.DateActive = DateTime.Now;
+            }
             FirebaseHelper helper = new FirebaseHelper();
             await helper.UpdateStockItem(item);
         }
@@ -72,6 +80,11 @@ namespace BusinessApp.Controllers
 
             FirebaseHelper helper = new FirebaseHelper();
             await helper.AddNewStockLog(company.CompanyNumber, log);
+        }
+
+        public async void DisplayHelp()
+        {
+            await Dialog.Show("Help", "The quantity of the stock can be changed by clicking the minus or plus and clicking save", "Ok");
         }
     }
 }

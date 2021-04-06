@@ -12,6 +12,7 @@ using Xamarin.Forms.Xaml;
 
 namespace BusinessApp.Views
 {
+    public enum MenuMode { Connected, Disconnected}
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MenuView : ContentPage
     {
@@ -19,6 +20,7 @@ namespace BusinessApp.Views
         private User user;
         private MenuController controller;
         private Company curCompany;
+        private MenuMode mode;
 
         public MenuView(User user)
         {
@@ -52,10 +54,12 @@ namespace BusinessApp.Views
             var result = controller.CheckCompanyIDs(user.CompanyIDs);
             if(result)
             {
+                mode = MenuMode.Connected;
                 MenuSetup();
             }
             else
             {
+                mode = MenuMode.Disconnected;
                 NoCompanySetup();   
             }
 
@@ -142,7 +146,11 @@ namespace BusinessApp.Views
 
         private async void btnBack_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopAsync();
+            var result = await controller.AreYouSure("Warning", "Are You Sure You Want To Log Out", "Yes", "No");
+            if (result)
+            {
+                await Navigation.PopAsync();
+            }
         }
 
         protected override bool OnBackButtonPressed()
@@ -183,6 +191,10 @@ namespace BusinessApp.Views
             await Navigation.PushAsync(new RegisterCompanyView(user));
         }
         #endregion
-        
+
+        private void btnHelp_Clicked(object sender, EventArgs e)
+        {
+            controller.DisplayHelp(mode);
+        }
     }
 }

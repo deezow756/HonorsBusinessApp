@@ -54,6 +54,11 @@ namespace BusinessApp.Controllers
             try
             {
                 double temp = double.Parse(val, System.Globalization.CultureInfo.InvariantCulture);
+                if (temp < 0)
+                {
+                    Dialog.Show("Warning", "Quantity Must Be 0 Or Higher", "Ok");
+                    return false;
+                }
             }
             catch(Exception)
             {
@@ -112,6 +117,13 @@ namespace BusinessApp.Controllers
 
             FirebaseHelper helper = new FirebaseHelper();
             await helper.AddNewManagerLog(company.CompanyNumber, log);
+        }
+
+        public async void Displayhelp()
+        {
+
+            await Dialog.Show("Help", "To decline the request click the cross icon\n\n" +
+                "To accect the request fill in the empty boxes and click the tick icon", "Ok");
         }
     }
 }

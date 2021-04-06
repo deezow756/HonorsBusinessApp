@@ -39,6 +39,11 @@ namespace BusinessApp.Controllers
             try
             {
                 double temp = double.Parse(price, System.Globalization.CultureInfo.InvariantCulture);
+                if (temp <= 0)
+                {
+                    Dialog.Show("Warning", "Price Must Be Higher Than 0", "Ok");
+                    return false;
+                }
             }
             catch
             {
@@ -48,6 +53,11 @@ namespace BusinessApp.Controllers
             try
             {
                 double temp = double.Parse(cost, System.Globalization.CultureInfo.InvariantCulture);
+                if (temp < 0)
+                {
+                    Dialog.Show("Warning", "Cost Must Be 0 Or Higher", "Ok");
+                    return false;
+                }
             }
             catch
             {
@@ -57,6 +67,11 @@ namespace BusinessApp.Controllers
             try
             {
                 int temp = int.Parse(quantity);
+                if (temp <= 0)
+                {
+                    Dialog.Show("Warning", "Quantity Must Be Higher Than 0", "Ok");
+                    return false;
+                }
             }
             catch
             {
@@ -176,6 +191,13 @@ namespace BusinessApp.Controllers
 
 
             return randomString;
+        }
+
+        public async void DisplayHelp()
+        {
+            await Dialog.Show("Help", "You must select wheather you are wanting to add a category or item\n\n" +
+                "Category: simply enter the name of the category and click add\n\n" +
+                "Item: fill in the asked for details and click add", "Ok");
         }
     }
 }

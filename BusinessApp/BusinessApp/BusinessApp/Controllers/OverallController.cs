@@ -78,5 +78,10 @@ namespace BusinessApp.Controllers
             txtEarnings.Text = earnings.ToString();
             txtProfit.Text = (earnings - cost).ToString();
         }
+
+        public async void DisplayHelp()
+        {
+            await Dialog.Show("Help", "You can filter the profits by month and year by manually changing the month or year by clicking on them or clicking the right arrow to increment by month and the left arrow to decrement by month", "Ok");
+        }
     }
 }

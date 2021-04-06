@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using BusinessApp.Interfaces;
 using BusinessApp.Models;
 using BusinessApp.Utilities;
+using BusinessApp.Views;
 
 namespace BusinessApp.Controllers
 {
@@ -36,6 +38,24 @@ namespace BusinessApp.Controllers
                 {
                     Dialog.Show("Warning", "Email Is Invalid", "Ok");
                     return false;
+                }
+                else
+                {
+                    try
+                    {
+                        var mail = new MailAddress(email);
+                        bool isValidEmail = mail.Host.Contains(".");
+                        if (!isValidEmail)
+                        {
+                            Dialog.Show("Warning", "Please Enter A Vaild Email", "Ok");
+                            return false;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        Dialog.Show("Warning", "Please Enter A Vaild Email", "Ok");
+                        return false;
+                    }
                 }
             }
 
@@ -183,6 +203,21 @@ namespace BusinessApp.Controllers
             }
             else
                 return true;
+        }
+
+        public async void DisplayHelp(Mode mode)
+        {
+            if (mode == Mode.View)
+            {
+                await Dialog.Show("Help", "You can click the pencil in the top right to enter edit mode", "Ok");
+            }
+            else
+            {
+                await Dialog.Show("Help", "You can click the pencil in the top right to exit edit mode\n\n" +
+                    "To remove a company simply click the company in the list and click ok to removing yourself from the company\n" +
+                    "You can request to connect with a company by entering the company id in the textbox under the list and click connect\n\n" +
+                    "To change anything else, simply edit the text box and click save to save your changes", "Ok");
+            }
         }
     }
 }

@@ -48,9 +48,9 @@
                                    HorizontalOptions="CenterAndExpand"
                                    VerticalOptions="CenterAndExpand"
                                    />
-                                <ImageButton x:Name="btnRefresh"
-                                         WidthRequest="50"
-                                         HeightRequest="50"
+                                <ImageButton x:Name="btnHelp"
+                                         Source="{DynamicResource helpIcon}"
+                                         Clicked="btnHelp_Clicked"
                                          HorizontalOptions="EndAndExpand"
                                          BackgroundColor="Transparent"
                                         >
@@ -123,8 +123,9 @@
                             <Label Text="Description"
                                Style="{DynamicResource MediumLabel}"
                                />
-                            <Editor x:Name="itemDescriptionEntry"
-                               Style="{DynamicResource EditorStyle}"                                   
+                            <Entry x:Name="itemDescriptionEntry"
+                               Style="{DynamicResource EntryStyle}"  
+                                   FontSize="15"
                                />
                         </StackLayout>
                         <StackLayout x:Name="categoryLayout" IsVisible="false" VerticalOptions="CenterAndExpand">

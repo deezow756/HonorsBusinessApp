@@ -151,5 +151,11 @@ namespace BusinessApp.Views
             FontHelper.ChangeFont(FontHelper.GetFontType(vc.ClassId));
             settings.Font = FontHelper.GetFontType(vc.ClassId);
         }
+
+        private async void btnHelp_Clicked(object sender, EventArgs e)
+        {
+            await Dialog.Show("Help", "You can set the theme of the app to automatically set to the light or dark theme that is set on your phone or, you can turn off the auto feature and manually change the theme\n\n" +
+                "You can also change the text font of the app by selecting a font in the list", "Ok");
+        }
     }
 }

@@ -52,6 +52,27 @@ namespace BusinessApp.Views
             string quantity = itemQuantityEntry.Text;
             string description = itemDescriptionEntry.Text;
 
+            if(!string.IsNullOrWhiteSpace(name))
+            {
+                name = name.Trim();
+            }
+            if (!string.IsNullOrWhiteSpace(price))
+            {
+                price = price.Trim();
+            }
+            if (!string.IsNullOrWhiteSpace(cost))
+            {
+                cost = cost.Trim();
+            }
+            if (!string.IsNullOrWhiteSpace(quantity))
+            {
+                quantity = quantity.Trim();
+            }
+            if (!string.IsNullOrWhiteSpace(description))
+            {
+                description = description.Trim();
+            }
+
             var result = controller.CheckDetails(name, price, cost, quantity, description);
             if(!result)
             {
@@ -68,6 +89,11 @@ namespace BusinessApp.Views
         private async void SaveCategory()
         {
             string name = catNameEntry.Text;
+
+            if(!string.IsNullOrWhiteSpace(name))
+            {
+                name = name.Trim();
+            }
 
             var result = controller.CheckDetails(name);
             if (!result)
@@ -126,6 +152,11 @@ namespace BusinessApp.Views
             arcFrame.IsVisible = false; //hide the frame
             MainContent.Opacity = 1; //make back the opacity of main grid
             MainContent.InputTransparent = false; //make main grid touchable
+        }
+
+        private void btnHelp_Clicked(object sender, EventArgs e)
+        {
+            controller.DisplayHelp();
         }
     }
 }

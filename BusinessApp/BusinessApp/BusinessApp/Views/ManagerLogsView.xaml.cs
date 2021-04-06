@@ -219,5 +219,10 @@ namespace BusinessApp.Views
         {
             lstLogs.SelectedItem = null;
         }
+
+        private void btnHelp_Clicked(object sender, EventArgs e)
+        {
+            controller.DisplayHelp();
+        }
     }
 }

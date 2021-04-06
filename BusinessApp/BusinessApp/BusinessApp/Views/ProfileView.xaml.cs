@@ -102,7 +102,7 @@ namespace BusinessApp.Views
 
         private async void btnConnect_Clicked(object sender, EventArgs e)
         {
-            var result = await controller.ConnectWithCompany(user, txtEntryCompanyID.Text);
+            var result = await controller.ConnectWithCompany(user, txtEntryCompanyID.Text.Trim());
 
             if(result)
             {
@@ -125,7 +125,24 @@ namespace BusinessApp.Views
 
             LoadingPopup();
 
-            var result = controller.CheckDetails(firstNameChanged, surnameChanged, emailChanged, txtEntryFirstName.Text, txtEntrySurname.Text, txtEntryEmail.Text);
+            string firstName = txtEntryFirstName.Text;
+            string surname = txtEntrySurname.Text;
+            string email = txtEntryEmail.Text;
+
+            if(!string.IsNullOrWhiteSpace(firstName))
+            {
+                firstName = firstName.Trim();
+            }
+            if (!string.IsNullOrWhiteSpace(surname))
+            {
+                surname = surname.Trim();
+            }
+            if (!string.IsNullOrWhiteSpace(email))
+            {
+                email = email.Trim();
+            }
+
+            var result = controller.CheckDetails(firstNameChanged, surnameChanged, emailChanged, firstName, surname, email);
 
             if(!result)
             {
@@ -133,7 +150,7 @@ namespace BusinessApp.Views
                 return;
             }
 
-            result = await controller.SaveChanges(user, txtEntryFirstName.Text, txtEntrySurname.Text, txtEntryEmail.Text);
+            result = await controller.SaveChanges(user, firstName, surname, email);
 
             if (result)
             {
@@ -203,6 +220,11 @@ namespace BusinessApp.Views
         private void txtEntryEmail_TextChanged(object sender, TextChangedEventArgs e)
         {
             emailChanged = true;
+        }
+
+        private void btnHelp_Clicked(object sender, EventArgs e)
+        {
+            controller.DisplayHelp(mode);
         }
     }
 }

@@ -45,6 +45,8 @@
     <FontImageSource x:Key="LogsIcon" Glyph="&#xf1da;"  FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
     <FontImageSource x:Key="BasketIcon" Glyph="&#xf291;"  FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
     <FontImageSource x:Key="LabourIcon" Glyph="&#xf0b1;"  FontFamily="FAS" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="helpIcon" Glyph="&#xf059;"  FontFamily="FAR" Size="50" Color="{DynamicResource PrimaryColor}"></FontImageSource>
+    <FontImageSource x:Key="loginHelpIcon" Glyph="&#xf059;"  FontFamily="FAR" Size="25" Color="{DynamicResource PrimaryColor}"></FontImageSource>
 
     <FontImageSource x:Key="TickIcon" Glyph="&#xf00c;"  FontFamily="FAS" Size="70" Color="Green"></FontImageSource>
     <FontImageSource x:Key="CrossIcon" Glyph="&#xf00d;"  FontFamily="FAS" Size="70" Color="Red"></FontImageSource>
@@ -381,5 +383,19 @@
                 Value="Transparent"/>
         <Setter Property="Source"
                 Value="{DynamicResource LabourIcon}"/>
+    </Style>
+
+    <Style x:Key="LoginHelpImage" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource loginHelpIcon}"/>
+    </Style>
+
+    <Style x:Key="HelpImage" TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+                Value="Transparent"/>
+        <Setter Property="Source"
+                Value="{DynamicResource helpIcon}"/>
     </Style>
 </ResourceDictionary>

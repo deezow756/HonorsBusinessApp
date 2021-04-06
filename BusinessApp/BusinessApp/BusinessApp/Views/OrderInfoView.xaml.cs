@@ -138,5 +138,10 @@ namespace BusinessApp.Views
             MainContent.Opacity = 1; //make back the opacity of main grid
             MainContent.InputTransparent = false; //make main grid touchable
         }
+
+        private void btnHelp_Clicked(object sender, EventArgs e)
+        {
+            controller.DisplayHelp();
+        }
     }
 }

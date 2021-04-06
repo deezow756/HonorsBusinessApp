@@ -64,6 +64,10 @@ namespace BusinessApp.Views
                 Dialog.Show("Warning", "Please Enter A Hourly Rate", "Ok");
                 return; 
             }
+            else
+            {
+                rate = rate.Trim();
+            }
             user.CompanyIDs.Find(a => a.CompanyNumber == company.CompanyNumber).HourlyRate = double.Parse(rate, System.Globalization.CultureInfo.InvariantCulture);
             var result = controller.CheckHourlyRate(rate);
             if(!result)
@@ -103,6 +107,11 @@ namespace BusinessApp.Views
         private async void btnBack_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
+        }
+
+        private void btnHelp_Clicked(object sender, EventArgs e)
+        {
+            controller.Displayhelp();
         }
     }
 }

@@ -130,6 +130,10 @@ namespace BusinessApp.Views
                 Dialog.Show("Warning", "Please Enter A Hourly Rate", "Ok");
                 return;
             }
+            else
+            {
+                rate = rate.Trim();
+            }
 
             user.CompanyIDs.Find(a => a.CompanyNumber == company.CompanyNumber).HourlyRate = double.Parse(rate, System.Globalization.CultureInfo.InvariantCulture);
 
@@ -178,6 +182,11 @@ namespace BusinessApp.Views
             await controller.RemoveEmployee(editor, user, company);
 
             await Navigation.PopAsync();
+        }
+
+        private void btnHelp_Clicked(object sender, EventArgs e)
+        {
+            controller.DisplayHelp(mode);
         }
     }
 }

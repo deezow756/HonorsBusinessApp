@@ -63,17 +63,22 @@ namespace BusinessApp.Views
 
         private void btnBasketAdd_Clicked(object sender, EventArgs e)
         {
+            string quantity = quantityBasketEntry.Text;
             if(string.IsNullOrWhiteSpace(quantityBasketEntry.Text))
             {
                 Dialog.Show("Warning", "Please Enter A Quantity", "Ok");
                 return;
             }
+            else
+            {
+                quantity = quantity.Trim();
+            }
 
-            var result = controller.CheckQuantity(quantityBasketEntry.Text);
+            var result = controller.CheckQuantity(quantity);
             if(!result)
             { return; }
 
-            if (int.Parse(quantityBasketEntry.Text) > curStock.Quantity)
+            if (int.Parse(quantityBasketEntry.Text.Trim()) > curStock.Quantity)
             {
                 Dialog.Show("Warning", "Please Enter A Lower Quantity As There Is Not Enough Stock", "Ok");
                 return;
@@ -82,7 +87,7 @@ namespace BusinessApp.Views
             ItemListEntry temp = new ItemListEntry();
             temp.Name = curStock.Name;
             temp.Amount = curStock.Price;
-            temp.Quantity = int.Parse(quantityBasketEntry.Text);
+            temp.Quantity = int.Parse(quantityBasketEntry.Text.Trim());
             temp.ItemNumber = curStock.StockNumber;
             item = temp;
             returnItem = true;
@@ -116,18 +121,23 @@ namespace BusinessApp.Views
 
         private void btnLabourAdd_Clicked(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(perHourEntry.Text))
+            string perHour = perHourEntry.Text;
+            if (string.IsNullOrWhiteSpace(perHour))
             {
                 return;
             }
-            var result = controller.CheckPerHour(perHourEntry.Text);
+            else
+            {
+                perHour = perHour.Trim();
+            }
+            var result = controller.CheckPerHour(perHourEntry.Text.Trim());
             if (!result)
             {
                 return;
             }
 
             curItem.Type = ItemType.Labour;
-            curItem.Quantity = double.Parse(perHourEntry.Text, System.Globalization.CultureInfo.InvariantCulture);
+            curItem.Quantity = double.Parse(perHour, System.Globalization.CultureInfo.InvariantCulture);
             item = curItem;
             returnItem = true;
         }
@@ -309,6 +319,11 @@ namespace BusinessApp.Views
             }
             liststock.ItemsSource = null;
             liststock.ItemsSource = temp;            
+        }
+
+        private void btnHelp_Clicked(object sender, EventArgs e)
+        {
+            controller.DisplayHelp();
         }
     }
 }

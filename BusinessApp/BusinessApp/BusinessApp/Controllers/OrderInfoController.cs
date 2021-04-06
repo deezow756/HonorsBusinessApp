@@ -93,5 +93,10 @@ namespace BusinessApp.Controllers
             FirebaseHelper helper = new FirebaseHelper();
             await helper.AddNewOrderLog(company.CompanyNumber, log);
         }
+
+        public async void DisplayHelp()
+        {
+            await Dialog.Show("Help", "You can change the paid status of the order to paid by clicking paided and then clicking ok", "Ok");
+        }
     }
 }

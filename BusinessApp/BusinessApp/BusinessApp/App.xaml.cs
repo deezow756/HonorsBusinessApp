@@ -31,7 +31,8 @@ namespace BusinessApp
                 ThemeHelper.ChangeTheme(settings.Theme);
             }
             FontHelper.ChangeFont(settings.Font);
-            MainPage = new NavigationPage(new LoginView());            
+            MainPage = new NavigationPage(new LoginView());
+            StartListening();
         }
         protected override void OnStart()
         {
@@ -43,6 +44,43 @@ namespace BusinessApp
 
         protected override void OnResume()
         {
+            
+        }
+
+        public void StartListening()
+        {
+            Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+        }
+
+        public void StopListening()
+        {
+            Connectivity.ConnectivityChanged -= Connectivity_ConnectivityChanged;
+        }
+
+        async void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
+        {
+            if (e.NetworkAccess != NetworkAccess.Internet)
+            {
+                if (MainPage.Navigation.NavigationStack[MainPage.Navigation.NavigationStack.Count - 1].GetType() != typeof(LoginView))
+                {
+                    await MainPage.Navigation.PushAsync(new NoInternetView());
+                }
+                else
+                {
+                    MessagingCenter.Send<App>(this, "internetOff");
+                }
+            }
+            else if (e.NetworkAccess == NetworkAccess.Internet)
+            {
+                if (MainPage.Navigation.NavigationStack[MainPage.Navigation.NavigationStack.Count - 1].GetType() == typeof(NoInternetView))
+                {
+                    await MainPage.Navigation.PopAsync();
+                }
+                else if(MainPage.Navigation.NavigationStack[MainPage.Navigation.NavigationStack.Count - 1].GetType() == typeof(LoginView))
+                {
+                    MessagingCenter.Send<App>(this, "internetOn");
+                }
+            }
         }
     }
 }

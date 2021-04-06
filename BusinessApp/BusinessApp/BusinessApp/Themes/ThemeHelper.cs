@@ -21,6 +21,11 @@ namespace BusinessApp.Themes
             }
         }
 
+        public static void RegisterToOnThemeChanged()
+        {
+
+        }
+
         private static ThemeType currentTheme;
         public static ThemeType CurrentTheme
         {

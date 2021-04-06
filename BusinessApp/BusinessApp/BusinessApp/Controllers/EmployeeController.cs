@@ -1,5 +1,6 @@
 ﻿using BusinessApp.Models;
 using BusinessApp.Utilities;
+using BusinessApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -117,6 +118,20 @@ namespace BusinessApp.Controllers
                 return false;
             }
             return true;
+        }
+
+        public async void DisplayHelp(Mode mode)
+        {
+            if(mode == Mode.View)
+            {
+                await Dialog.Show("Help", "Click the pencil icon to enter edit mode", "Ok");
+            }
+            else
+            {
+                await Dialog.Show("Help", "Click the pencil icon to exit edit mode\n\n" +
+                    "Hourly paid rate must be numeric\n\n" +
+                    "An employee can be removed by simply clicking remove employee and clicking ok", "Ok");
+            }
         }
     }
 }

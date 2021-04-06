@@ -330,5 +330,10 @@ namespace BusinessApp.Views
         {
             Refresh();
         }
+
+        private void btnHelp_Clicked(object sender, EventArgs e)
+        {
+            controller.DisplayHelp();
+        }
     }
 }

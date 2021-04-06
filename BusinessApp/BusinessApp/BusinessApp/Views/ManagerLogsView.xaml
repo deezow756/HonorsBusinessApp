@@ -47,27 +47,49 @@
                                    HorizontalOptions="CenterAndExpand"
                                    VerticalOptions="CenterAndExpand"
                                    />
-                                <ImageButton x:Name="btnRefresh"
+                                <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="EndAndExpand">
+                                    <ImageButton x:Name="btnHelp"
+                                         Source="{DynamicResource helpIcon}"
+                                         Clicked="btnHelp_Clicked"       
+                                         BackgroundColor="Transparent"
+                                             HorizontalOptions="EndAndExpand"
+                                        >
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="Normal">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="1"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                                <VisualState x:Name="Pressed">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="0.8"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                    </ImageButton>
+                                    <ImageButton x:Name="btnRefresh"
                                          Style="{DynamicResource RefreshImage}"
                                              Clicked="btnRefresh_Clicked"
-                                         HorizontalOptions="EndAndExpand"
                                          BackgroundColor="Transparent"
                                         >
-                                    <VisualStateManager.VisualStateGroups>
-                                        <VisualStateGroup x:Name="CommonStates">
-                                            <VisualState x:Name="Normal">
-                                                <VisualState.Setters>
-                                                    <Setter Property="Scale" Value="1"/>
-                                                </VisualState.Setters>
-                                            </VisualState>
-                                            <VisualState x:Name="Pressed">
-                                                <VisualState.Setters>
-                                                    <Setter Property="Scale" Value="0.8"/>
-                                                </VisualState.Setters>
-                                            </VisualState>
-                                        </VisualStateGroup>
-                                    </VisualStateManager.VisualStateGroups>
-                                </ImageButton>
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="Normal">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="1"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                                <VisualState x:Name="Pressed">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="Scale" Value="0.8"/>
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                    </ImageButton>
+                                </StackLayout>
                             </StackLayout>
                         </Frame>
                     </StackLayout>
@@ -121,7 +143,7 @@
                                     </VisualStateGroup>
                                 </VisualStateManager.VisualStateGroups>
                             </ImageButton>
-                            <Picker x:Name="monthPicker" WidthRequest="100" SelectedIndexChanged="monthPicker_SelectedIndexChanged">
+                            <Picker x:Name="monthPicker" TextColor="{DynamicResource PrimaryTextColor}" WidthRequest="100" SelectedIndexChanged="monthPicker_SelectedIndexChanged">
                                 <Picker.Items>
                                     <x:String>Jan</x:String>
                                     <x:String>Feb</x:String>
@@ -160,7 +182,7 @@
                                     </VisualStateGroup>
                                 </VisualStateManager.VisualStateGroups>
                             </ImageButton>
-                            <Picker x:Name="yearPicker" WidthRequest="100" SelectedIndexChanged="yearPicker_SelectedIndexChanged">
+                            <Picker x:Name="yearPicker" TextColor="{DynamicResource PrimaryTextColor}" WidthRequest="100" SelectedIndexChanged="yearPicker_SelectedIndexChanged">
                                 <Picker.Items>
                                     
                                 </Picker.Items>
